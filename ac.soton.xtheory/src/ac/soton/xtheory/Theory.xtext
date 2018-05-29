@@ -1,0 +1,126 @@
+grammar ac.soton.theory.xtext.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
+
+generate theory "http://www.soton.ac/xtheory/Theory"
+
+Theory:
+	'theory' name=ID ('(' parameters+=Parameter+')')?
+	('imports' imports +=ID (imports += ID)*)?
+	(
+		('types' types += Type+) |
+		('operators' operators += Operator+) |
+		('axioms' axioms += Axiom+) |
+		('rules' 		
+			('variables' variables += Variable+)?
+			rules += Rule+
+		)
+	)*
+	'end'
+;
+
+Parameter:
+	name = ID	
+;
+
+Type:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID
+	(
+		'(' parameters += [Parameter]+')'
+	 	'=' constructors += Constructor ('|' constructors += Constructor)*
+	)?
+;
+
+Constructor:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID
+	('(' destructors += Destructor (',' destructors += Destructor)* ')')?	
+;
+
+Destructor:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID ":" type=STRING
+;
+
+Operator:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID ('(' arguments += Argument (',' arguments += Argument)*')')?
+	(
+		(':' type=STRING)? &
+		(notation = Notation)? &
+		(associtive ?= 'associative' commutative ?= 'commutative'?)?
+	)
+	('#' precedent=INT)?
+	('for' wd=STRING)?
+	(
+		'=' 
+		(
+			definition=STRING
+		|
+			'case' case=ID (cases += Case+)
+		)		
+	)?
+;
+
+Argument:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID ":" type=STRING
+;
+enum Notation:
+  PREFIX='prefix' | INFIX='infix' | POSTFIX='postfix';
+
+Case:
+	pattern=STRING "=>" formula=STRING
+;
+
+Axiom:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':' predicate=STRING (isTheorem?='theorem')?
+;
+
+Variable:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	name=ID ':' type=STRING
+;
+
+Rule:
+	(comments = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':'
+	(
+		rule=RewriteRule |
+		rule=InferenceRule
+	)
+;
+
+RewriteRule:
+	pattern=STRING '=='
+	(
+		rule = UnconditionalRewrite |	
+		rule = ConditionalRewrite
+	)
+;
+
+InferenceRule:
+	given+=Given* '|-' infer=Infer
+;
+
+Given:
+	predicate=STRING (required?='required')?
+;
+
+Infer:
+	predicate=STRING
+;
+
+UnconditionalRewrite: 
+	rhs += STRING
+;
+
+
+ConditionalRewrite:
+	rewrites += ConditionalRewriteRule
+	(rewrites += ConditionalRewriteRule)*	
+;
+
+ConditionalRewriteRule:
+	lsh = STRING '=>' rhs = STRING
+;
