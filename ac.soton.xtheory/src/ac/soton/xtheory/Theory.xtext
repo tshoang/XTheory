@@ -1,6 +1,9 @@
 grammar ac.soton.theory.xtext.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
 
-generate theory "http://www.soton.ac/xtheory/Theory"
+//generate theory "http://www.soton.ac/xtheory/Theory"
+//import "http://emf.eventb.org/models/core/2014" as eventbcore
+import "http://soton.ac.uk/models/eventb/xtheory/2018"
+//import "platform:/ressource/ac.soton.eventb.emf.core.theoryextension/model/eventbcoretheoryextension.ecore"
 
 Theory:
 	'theory' name=ID ('(' parameters+=Parameter+')')?
