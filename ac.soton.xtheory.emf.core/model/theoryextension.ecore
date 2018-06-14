@@ -2,20 +2,37 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="theoryextension" nsURI="http://soton.ac.uk/models/eventb/theoryextension/2018"
     nsPrefix="theoryextension">
-  <eClassifiers xsi:type="ecore:EClass" name="EventBNamedCommentedExpressionElement"
-      abstract="true" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Theory" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Theory" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operators" upperBound="-1"
+        eType="#//Operator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="axioms" upperBound="-1"
+        eType="#//Axiom" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theorems" upperBound="-1"
+        eType="#//Theorem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed"/>
   <eClassifiers xsi:type="ecore:EClass" name="Operator" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedActionElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//OperatorType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Notation" eType="#//OperatorFix"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsAssociative" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsCommutative" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notation" eType="#//Notation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associative" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commutative" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
-        eType="#//Argument"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="welldefinednesses" upperBound="-1"
-        eType="#//WellDefinedness"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formulas" upperBound="-1"
-        eType="#//Formula"/>
+        eType="#//Argument" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precedent" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wd" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//Case" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursivities" upperBound="-1"
         eType="#//Recursivity"/>
   </eClassifiers>
@@ -23,65 +40,82 @@
     <eLiterals name="expression" value="1"/>
     <eLiterals name="predicate"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="OperatorFix">
-    <eLiterals name="prefix"/>
-    <eLiterals name="infix" value="1"/>
-    <eLiterals name="postfix" value="2" literal=""/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Notation">
+    <eLiterals name="PREFIX"/>
+    <eLiterals name="INFIX" value="1"/>
+    <eLiterals name="POSTFIX" value="2" literal="POSTFIX"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//EventBNamedCommentedExpressionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WellDefinedness" eSuperTypes="#//EventBNamedCommentedExpressionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Formula" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBCommentedExpressionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Case" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formula" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Recursivity" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBCommentedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Case" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" upperBound="-1"
-        eType="#//Constructor"/>
+        eType="#//Constructor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constructor" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destructors" upperBound="-1"
-        eType="#//Destructor"/>
+        eType="#//Destructor" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Destructor" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Axiom" eSuperTypes="#//EventBNamedCommentedExpressionElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Theorem" eSuperTypes="#//EventBNamedCommentedExpressionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Axiom" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicate" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Theorem" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicate" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rewriteRules" eType="#//RewriteRule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inferenceRules" eType="#//Inference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBObject"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RewriteRule" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="RewriteRule" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsCaseComplete" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ApplicabilityIsInteractive"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ApplicabilityIsAutomatic"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rewrite" eSuperTypes="#//EventBNamedCommentedExpressionElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Rewrite" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Formula" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnconditionalRewrite">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs" lowerBound="1" upperBound="-1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalRewrite">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rewriteRules" eType="#//ConditionalRewriteRule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rewrites" lowerBound="1"
+        upperBound="-1" eType="#//ConditionalRewriteRule" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalRewriteRule" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBObject">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lhs" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inference">
+  <eClassifiers xsi:type="ecore:EClass" name="InferenceRule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="given" upperBound="-1"
-        eType="#//Given"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="infer" lowerBound="1" eType="#//Infer"/>
+        eType="#//Given" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="infer" lowerBound="1" eType="#//Infer"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ApplicabilityIsInteractive"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ApplicabilityIsAutomatic"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Given" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsInHypothesis" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Infer" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">

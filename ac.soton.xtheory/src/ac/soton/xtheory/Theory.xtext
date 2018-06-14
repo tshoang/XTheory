@@ -2,7 +2,7 @@ grammar ac.soton.theory.xtext.Theory with org.eclipse.xtext.common.Terminals hid
 
 //generate theory "http://www.soton.ac/xtheory/Theory"
 //import "http://emf.eventb.org/models/core/2014" as eventbcore
-import "http://soton.ac.uk/models/eventb/xtheory/2018"
+import "http://soton.ac.uk/models/eventb/theoryextension/2018"
 //import "platform:/ressource/ac.soton.eventb.emf.core.theoryextension/model/eventbcoretheoryextension.ecore"
 
 Theory:
@@ -12,6 +12,7 @@ Theory:
 		('types' types += Type+) |
 		('operators' operators += Operator+) |
 		('axioms' axioms += Axiom+) |
+		('theorems' theorems += Theorem+) |
 		('rules' 		
 			('variables' variables += Variable+)?
 			rules += Rule+
@@ -25,7 +26,7 @@ Parameter:
 ;
 
 Type:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID
 	(
 		'(' parameters += [Parameter]+')'
@@ -34,23 +35,23 @@ Type:
 ;
 
 Constructor:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID
 	('(' destructors += Destructor (',' destructors += Destructor)* ')')?	
 ;
 
 Destructor:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ":" type=STRING
 ;
 
 Operator:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ('(' arguments += Argument (',' arguments += Argument)*')')?
 	(
 		(':' type=STRING)? &
 		(notation = Notation)? &
-		(associtive ?= 'associative' commutative ?= 'commutative'?)?
+		(associative ?= 'associative' commutative ?= 'commutative'?)?
 	)
 	('#' precedent=INT)?
 	('for' wd=STRING)?
@@ -65,9 +66,10 @@ Operator:
 ;
 
 Argument:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ":" type=STRING
 ;
+
 enum Notation:
   PREFIX='prefix' | INFIX='infix' | POSTFIX='postfix';
 
@@ -76,17 +78,22 @@ Case:
 ;
 
 Axiom:
-	(comments = (ML_COMMENT | SL_COMMENT))?
-	'@'name=ID':' predicate=STRING (isTheorem?='theorem')?
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':' predicate=STRING
+;
+
+Theorem:
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':' predicate=STRING
 ;
 
 Variable:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ':' type=STRING
 ;
 
 Rule:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	'@'name=ID':'
 	(
 		rule=RewriteRule |
@@ -107,11 +114,11 @@ InferenceRule:
 ;
 
 Given:
-	predicate=STRING (required?='required')?
+	expression=STRING (required?='required')?
 ;
 
 Infer:
-	predicate=STRING
+	expression=STRING
 ;
 
 UnconditionalRewrite: 
@@ -125,5 +132,5 @@ ConditionalRewrite:
 ;
 
 ConditionalRewriteRule:
-	lsh = STRING '=>' rhs = STRING
+	lhs = STRING '=>' rhs = STRING
 ;

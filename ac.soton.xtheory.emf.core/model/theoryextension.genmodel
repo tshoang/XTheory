@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ac.soton.xtheory.emf.core/src" modelPluginID="ac.soton.xtheory.emf.core"
+    templateDirectory="/org.eventb.emf.core/templates" dynamicTemplates="true" modelName="Theoryextension"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    containmentProxies="true" complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eventb.emf.core/model/eventbcore.genmodel#//core"
+    interfaceNamePattern="" operationReflection="true" importOrganizing="true">
+  <foreignModel>theoryextension.ecore</foreignModel>
+  <genPackages prefix="Theoryextension" disposableProviderFactory="true" extensibleProviderFactory="true"
+      childCreationExtenders="true" ecorePackage="theoryextension.ecore#/" publicationLocation="">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="theoryextension.ecore#//OperatorType">
+      <genEnumLiterals ecoreEnumLiteral="theoryextension.ecore#//OperatorType/expression"/>
+      <genEnumLiterals ecoreEnumLiteral="theoryextension.ecore#//OperatorType/predicate"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="theoryextension.ecore#//Notation">
+      <genEnumLiterals ecoreEnumLiteral="theoryextension.ecore#//Notation/PREFIX"/>
+      <genEnumLiterals ecoreEnumLiteral="theoryextension.ecore#//Notation/INFIX"/>
+      <genEnumLiterals ecoreEnumLiteral="theoryextension.ecore#//Notation/POSTFIX"/>
+    </genEnums>
+    <genClasses ecoreClass="theoryextension.ecore#//Theory">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Theory/imports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/operators"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/types"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/axioms"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/theorems"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/rules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Theory/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Parameter"/>
+    <genClasses ecoreClass="theoryextension.ecore#//Operator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/notation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/associative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/commutative"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Operator/arguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/precedent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/wd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Operator/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Operator/cases"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Operator/recursivities"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Case">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Case/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Case/formula"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Argument"/>
+    <genClasses ecoreClass="theoryextension.ecore#//Recursivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Recursivity/Case"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Type">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Type/constructors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Type/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Constructor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Constructor/destructors"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Destructor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Destructor/type"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Axiom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Axiom/predicate"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Theorem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Theorem/predicate"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Rule/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//RewriteRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//RewriteRule/IsCaseComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//RewriteRule/ApplicabilityIsInteractive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//RewriteRule/ApplicabilityIsAutomatic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//RewriteRule/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Rewrite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Rewrite/Formula"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//UnconditionalRewrite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//UnconditionalRewrite/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//ConditionalRewrite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference theoryextension.ecore#//ConditionalRewrite/rewrites"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//ConditionalRewriteRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//ConditionalRewriteRule/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//ConditionalRewriteRule/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//InferenceRule">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//InferenceRule/given"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//InferenceRule/infer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//InferenceRule/ApplicabilityIsInteractive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//InferenceRule/ApplicabilityIsAutomatic"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Given">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Given/required"/>
+    </genClasses>
+    <genClasses ecoreClass="theoryextension.ecore#//Infer"/>
+    <genClasses ecoreClass="theoryextension.ecore#//Variable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference theoryextension.ecore#//Variable/Type"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
