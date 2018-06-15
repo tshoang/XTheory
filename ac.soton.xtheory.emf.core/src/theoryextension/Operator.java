@@ -3,8 +3,7 @@
 package theoryextension;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eventb.emf.core.EventBNamedCommentedActionElement;
+import org.eventb.emf.core.EventBNamedCommentedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +21,8 @@ import org.eventb.emf.core.EventBNamedCommentedActionElement;
  *   <li>{@link theoryextension.Operator#getPrecedent <em>Precedent</em>}</li>
  *   <li>{@link theoryextension.Operator#getWd <em>Wd</em>}</li>
  *   <li>{@link theoryextension.Operator#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link theoryextension.Operator#getCase <em>Case</em>}</li>
  *   <li>{@link theoryextension.Operator#getCases <em>Cases</em>}</li>
- *   <li>{@link theoryextension.Operator#getRecursivities <em>Recursivities</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,10 +30,9 @@ import org.eventb.emf.core.EventBNamedCommentedActionElement;
  * @model
  * @generated
  */
-public interface Operator extends EventBNamedCommentedActionElement {
+public interface Operator extends EventBNamedCommentedElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link theoryextension.OperatorType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -42,24 +40,22 @@ public interface Operator extends EventBNamedCommentedActionElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see theoryextension.OperatorType
-	 * @see #setType(OperatorType)
+	 * @see #setType(String)
 	 * @see theoryextension.TheoryextensionPackage#getOperator_Type()
 	 * @model
 	 * @generated
 	 */
-	OperatorType getType();
+	String getType();
 
 	/**
 	 * Sets the value of the '{@link theoryextension.Operator#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see theoryextension.OperatorType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(OperatorType value);
+	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Notation</b></em>' attribute.
@@ -237,6 +233,32 @@ public interface Operator extends EventBNamedCommentedActionElement {
 	void setDefinition(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Case</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Case</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Case</em>' attribute.
+	 * @see #setCase(String)
+	 * @see theoryextension.TheoryextensionPackage#getOperator_Case()
+	 * @model
+	 * @generated
+	 */
+	String getCase();
+
+	/**
+	 * Sets the value of the '{@link theoryextension.Operator#getCase <em>Case</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Case</em>' attribute.
+	 * @see #getCase()
+	 * @generated
+	 */
+	void setCase(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Cases</b></em>' containment reference list.
 	 * The list contents are of type {@link theoryextension.Case}.
 	 * <!-- begin-user-doc -->
@@ -251,21 +273,5 @@ public interface Operator extends EventBNamedCommentedActionElement {
 	 * @generated
 	 */
 	EList<Case> getCases();
-
-	/**
-	 * Returns the value of the '<em><b>Recursivities</b></em>' reference list.
-	 * The list contents are of type {@link theoryextension.Recursivity}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Recursivities</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recursivities</em>' reference list.
-	 * @see theoryextension.TheoryextensionPackage#getOperator_Recursivities()
-	 * @model
-	 * @generated
-	 */
-	EList<Recursivity> getRecursivities();
 
 } // Operator

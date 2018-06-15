@@ -16,6 +16,8 @@ import org.eventb.emf.core.EventBObject;
  *   <li>{@link theoryextension.RewriteRule#isApplicabilityIsInteractive <em>Applicability Is Interactive</em>}</li>
  *   <li>{@link theoryextension.RewriteRule#isApplicabilityIsAutomatic <em>Applicability Is Automatic</em>}</li>
  *   <li>{@link theoryextension.RewriteRule#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link theoryextension.RewriteRule#getUrule <em>Urule</em>}</li>
+ *   <li>{@link theoryextension.RewriteRule#getCrule <em>Crule</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,5 +129,57 @@ public interface RewriteRule extends EventBObject {
 	 * @generated
 	 */
 	void setPattern(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Urule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Urule</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Urule</em>' containment reference.
+	 * @see #setUrule(UnconditionalRewrite)
+	 * @see theoryextension.TheoryextensionPackage#getRewriteRule_Urule()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	UnconditionalRewrite getUrule();
+
+	/**
+	 * Sets the value of the '{@link theoryextension.RewriteRule#getUrule <em>Urule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Urule</em>' containment reference.
+	 * @see #getUrule()
+	 * @generated
+	 */
+	void setUrule(UnconditionalRewrite value);
+
+	/**
+	 * Returns the value of the '<em><b>Crule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Crule</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Crule</em>' containment reference.
+	 * @see #setCrule(ConditionalRewrite)
+	 * @see theoryextension.TheoryextensionPackage#getRewriteRule_Crule()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	ConditionalRewrite getCrule();
+
+	/**
+	 * Sets the value of the '{@link theoryextension.RewriteRule#getCrule <em>Crule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Crule</em>' containment reference.
+	 * @see #getCrule()
+	 * @generated
+	 */
+	void setCrule(ConditionalRewrite value);
 
 } // RewriteRule

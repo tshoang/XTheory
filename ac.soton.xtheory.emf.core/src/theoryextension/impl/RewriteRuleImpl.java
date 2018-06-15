@@ -4,12 +4,16 @@ package theoryextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eventb.emf.core.impl.EventBObjectImpl;
+import theoryextension.ConditionalRewrite;
 import theoryextension.RewriteRule;
 import theoryextension.TheoryextensionPackage;
+import theoryextension.UnconditionalRewrite;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +26,8 @@ import theoryextension.TheoryextensionPackage;
  *   <li>{@link theoryextension.impl.RewriteRuleImpl#isApplicabilityIsInteractive <em>Applicability Is Interactive</em>}</li>
  *   <li>{@link theoryextension.impl.RewriteRuleImpl#isApplicabilityIsAutomatic <em>Applicability Is Automatic</em>}</li>
  *   <li>{@link theoryextension.impl.RewriteRuleImpl#getPattern <em>Pattern</em>}</li>
+ *   <li>{@link theoryextension.impl.RewriteRuleImpl#getUrule <em>Urule</em>}</li>
+ *   <li>{@link theoryextension.impl.RewriteRuleImpl#getCrule <em>Crule</em>}</li>
  * </ul>
  * </p>
  *
@@ -107,6 +113,26 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 	 * @ordered
 	 */
 	protected String pattern = PATTERN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUrule() <em>Urule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUrule()
+	 * @generated
+	 * @ordered
+	 */
+	protected UnconditionalRewrite urule;
+
+	/**
+	 * The cached value of the '{@link #getCrule() <em>Crule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCrule()
+	 * @generated
+	 * @ordered
+	 */
+	protected ConditionalRewrite crule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,6 +242,154 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public UnconditionalRewrite getUrule() {
+		if (urule != null && urule.eIsProxy()) {
+			InternalEObject oldUrule = (InternalEObject)urule;
+			urule = (UnconditionalRewrite)eResolveProxy(oldUrule);
+			if (urule != oldUrule) {
+				InternalEObject newUrule = (InternalEObject)urule;
+				NotificationChain msgs = oldUrule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__URULE, null, null);
+				if (newUrule.eInternalContainer() == null) {
+					msgs = newUrule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__URULE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TheoryextensionPackage.REWRITE_RULE__URULE, oldUrule, urule));
+			}
+		}
+		return urule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnconditionalRewrite basicGetUrule() {
+		return urule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetUrule(UnconditionalRewrite newUrule, NotificationChain msgs) {
+		UnconditionalRewrite oldUrule = urule;
+		urule = newUrule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.REWRITE_RULE__URULE, oldUrule, newUrule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setUrule(UnconditionalRewrite newUrule) {
+		if (newUrule != urule) {
+			NotificationChain msgs = null;
+			if (urule != null)
+				msgs = ((InternalEObject)urule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__URULE, null, msgs);
+			if (newUrule != null)
+				msgs = ((InternalEObject)newUrule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__URULE, null, msgs);
+			msgs = basicSetUrule(newUrule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.REWRITE_RULE__URULE, newUrule, newUrule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionalRewrite getCrule() {
+		if (crule != null && crule.eIsProxy()) {
+			InternalEObject oldCrule = (InternalEObject)crule;
+			crule = (ConditionalRewrite)eResolveProxy(oldCrule);
+			if (crule != oldCrule) {
+				InternalEObject newCrule = (InternalEObject)crule;
+				NotificationChain msgs = oldCrule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__CRULE, null, null);
+				if (newCrule.eInternalContainer() == null) {
+					msgs = newCrule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__CRULE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TheoryextensionPackage.REWRITE_RULE__CRULE, oldCrule, crule));
+			}
+		}
+		return crule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConditionalRewrite basicGetCrule() {
+		return crule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCrule(ConditionalRewrite newCrule, NotificationChain msgs) {
+		ConditionalRewrite oldCrule = crule;
+		crule = newCrule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.REWRITE_RULE__CRULE, oldCrule, newCrule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCrule(ConditionalRewrite newCrule) {
+		if (newCrule != crule) {
+			NotificationChain msgs = null;
+			if (crule != null)
+				msgs = ((InternalEObject)crule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__CRULE, null, msgs);
+			if (newCrule != null)
+				msgs = ((InternalEObject)newCrule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.REWRITE_RULE__CRULE, null, msgs);
+			msgs = basicSetCrule(newCrule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.REWRITE_RULE__CRULE, newCrule, newCrule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TheoryextensionPackage.REWRITE_RULE__URULE:
+				return basicSetUrule(null, msgs);
+			case TheoryextensionPackage.REWRITE_RULE__CRULE:
+				return basicSetCrule(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -227,6 +401,12 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 				return isApplicabilityIsAutomatic();
 			case TheoryextensionPackage.REWRITE_RULE__PATTERN:
 				return getPattern();
+			case TheoryextensionPackage.REWRITE_RULE__URULE:
+				if (resolve) return getUrule();
+				return basicGetUrule();
+			case TheoryextensionPackage.REWRITE_RULE__CRULE:
+				if (resolve) return getCrule();
+				return basicGetCrule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -250,6 +430,12 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 				return;
 			case TheoryextensionPackage.REWRITE_RULE__PATTERN:
 				setPattern((String)newValue);
+				return;
+			case TheoryextensionPackage.REWRITE_RULE__URULE:
+				setUrule((UnconditionalRewrite)newValue);
+				return;
+			case TheoryextensionPackage.REWRITE_RULE__CRULE:
+				setCrule((ConditionalRewrite)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,6 +461,12 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 			case TheoryextensionPackage.REWRITE_RULE__PATTERN:
 				setPattern(PATTERN_EDEFAULT);
 				return;
+			case TheoryextensionPackage.REWRITE_RULE__URULE:
+				setUrule((UnconditionalRewrite)null);
+				return;
+			case TheoryextensionPackage.REWRITE_RULE__CRULE:
+				setCrule((ConditionalRewrite)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -295,6 +487,10 @@ public class RewriteRuleImpl extends EventBObjectImpl implements RewriteRule {
 				return applicabilityIsAutomatic != APPLICABILITY_IS_AUTOMATIC_EDEFAULT;
 			case TheoryextensionPackage.REWRITE_RULE__PATTERN:
 				return PATTERN_EDEFAULT == null ? pattern != null : !PATTERN_EDEFAULT.equals(pattern);
+			case TheoryextensionPackage.REWRITE_RULE__URULE:
+				return urule != null;
+			case TheoryextensionPackage.REWRITE_RULE__CRULE:
+				return crule != null;
 		}
 		return super.eIsSet(featureID);
 	}

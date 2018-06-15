@@ -8,14 +8,11 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.eventb.emf.core.EventBAction;
 import org.eventb.emf.core.EventBCommented;
 import org.eventb.emf.core.EventBCommentedElement;
 import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBExpression;
 import org.eventb.emf.core.EventBNamed;
-import org.eventb.emf.core.EventBNamedCommentedActionElement;
 import org.eventb.emf.core.EventBNamedCommentedElement;
 import org.eventb.emf.core.EventBObject;
 
@@ -96,10 +93,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseArgument(Argument object) {
 				return createArgumentAdapter();
-			}
-			@Override
-			public Adapter caseRecursivity(Recursivity object) {
-				return createRecursivityAdapter();
 			}
 			@Override
 			public Adapter caseType(Type object) {
@@ -184,14 +177,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEventBNamedCommentedElement(EventBNamedCommentedElement object) {
 				return createEventBNamedCommentedElementAdapter();
-			}
-			@Override
-			public Adapter caseEventBAction(EventBAction object) {
-				return createEventBActionAdapter();
-			}
-			@Override
-			public Adapter caseEventBNamedCommentedActionElement(EventBNamedCommentedActionElement object) {
-				return createEventBNamedCommentedActionElementAdapter();
 			}
 			@Override
 			public Adapter caseEventBExpression(EventBExpression object) {
@@ -284,20 +269,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArgumentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link theoryextension.Recursivity <em>Recursivity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see theoryextension.Recursivity
-	 * @generated
-	 */
-	public Adapter createRecursivityAdapter() {
 		return null;
 	}
 
@@ -606,34 +577,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEventBNamedCommentedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBAction <em>Event BAction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eventb.emf.core.EventBAction
-	 * @generated
-	 */
-	public Adapter createEventBActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBNamedCommentedActionElement <em>Event BNamed Commented Action Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eventb.emf.core.EventBNamedCommentedActionElement
-	 * @generated
-	 */
-	public Adapter createEventBNamedCommentedActionElementAdapter() {
 		return null;
 	}
 

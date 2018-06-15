@@ -18,9 +18,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.eventb.emf.core.provider.EventBNamedCommentedActionElementItemProvider;
-
+import org.eventb.emf.core.provider.EventBNamedCommentedElementItemProvider;
 import theoryextension.Operator;
 import theoryextension.TheoryextensionFactory;
 import theoryextension.TheoryextensionPackage;
@@ -31,7 +29,7 @@ import theoryextension.TheoryextensionPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperatorItemProvider extends EventBNamedCommentedActionElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class OperatorItemProvider extends EventBNamedCommentedElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -60,7 +58,7 @@ public class OperatorItemProvider extends EventBNamedCommentedActionElementItemP
 			addArgumentsPropertyDescriptor(object);
 			addPrecedentPropertyDescriptor(object);
 			addDefinitionPropertyDescriptor(object);
-			addRecursivitiesPropertyDescriptor(object);
+			addCasePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,8 +74,8 @@ public class OperatorItemProvider extends EventBNamedCommentedActionElementItemP
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Operator_Type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Operator_Type_feature", "_UI_Operator_type"),
+				 getString("_UI_Operator_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Operator_type_feature", "_UI_Operator_type"),
 				 TheoryextensionPackage.Literals.OPERATOR__TYPE,
 				 true,
 				 false,
@@ -220,23 +218,23 @@ public class OperatorItemProvider extends EventBNamedCommentedActionElementItemP
 	}
 
 	/**
-	 * This adds a property descriptor for the Recursivities feature.
+	 * This adds a property descriptor for the Case feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRecursivitiesPropertyDescriptor(Object object) {
+	protected void addCasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Operator_recursivities_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Operator_recursivities_feature", "_UI_Operator_type"),
-				 TheoryextensionPackage.Literals.OPERATOR__RECURSIVITIES,
+				 getString("_UI_Operator_case_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Operator_case_feature", "_UI_Operator_type"),
+				 TheoryextensionPackage.Literals.OPERATOR__CASE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -316,6 +314,7 @@ public class OperatorItemProvider extends EventBNamedCommentedActionElementItemP
 			case TheoryextensionPackage.OPERATOR__COMMUTATIVE:
 			case TheoryextensionPackage.OPERATOR__PRECEDENT:
 			case TheoryextensionPackage.OPERATOR__DEFINITION:
+			case TheoryextensionPackage.OPERATOR__CASE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TheoryextensionPackage.OPERATOR__WD:

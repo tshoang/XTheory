@@ -204,7 +204,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__ANNOTATIONS;
+	int OPERATOR__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -213,7 +213,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__EXTENSIONS;
+	int OPERATOR__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' map.
@@ -222,7 +222,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__ATTRIBUTES;
+	int OPERATOR__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -231,7 +231,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__REFERENCE;
+	int OPERATOR__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Generated</b></em>' attribute.
@@ -240,7 +240,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__GENERATED;
+	int OPERATOR__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__GENERATED;
 
 	/**
 	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
@@ -249,7 +249,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__LOCAL_GENERATED;
+	int OPERATOR__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__LOCAL_GENERATED;
 
 	/**
 	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
@@ -258,7 +258,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__INTERNAL_ID;
+	int OPERATOR__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -267,7 +267,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__COMMENT;
+	int OPERATOR__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -276,16 +276,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Action</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR__ACTION = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT__ACTION;
+	int OPERATOR__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -294,7 +285,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__TYPE = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 0;
+	int OPERATOR__TYPE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Notation</b></em>' attribute.
@@ -303,7 +294,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__NOTATION = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 1;
+	int OPERATOR__NOTATION = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Associative</b></em>' attribute.
@@ -312,7 +303,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__ASSOCIATIVE = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 2;
+	int OPERATOR__ASSOCIATIVE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Commutative</b></em>' attribute.
@@ -321,7 +312,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__COMMUTATIVE = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 3;
+	int OPERATOR__COMMUTATIVE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -330,7 +321,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__ARGUMENTS = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 4;
+	int OPERATOR__ARGUMENTS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Precedent</b></em>' attribute.
@@ -339,7 +330,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__PRECEDENT = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 5;
+	int OPERATOR__PRECEDENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Wd</b></em>' attribute.
@@ -348,7 +339,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__WD = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 6;
+	int OPERATOR__WD = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Definition</b></em>' attribute.
@@ -357,7 +348,16 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__DEFINITION = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 7;
+	int OPERATOR__DEFINITION = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Case</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATOR__CASE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Cases</b></em>' containment reference list.
@@ -366,16 +366,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR__CASES = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
-	 * The feature id for the '<em><b>Recursivities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR__RECURSIVITIES = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 9;
+	int OPERATOR__CASES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Operator</em>' class.
@@ -384,7 +375,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ACTION_ELEMENT_FEATURE_COUNT + 10;
+	int OPERATOR_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.CaseImpl <em>Case</em>}' class.
@@ -524,113 +515,22 @@ public interface TheoryextensionPackage extends EPackage {
 	int ARGUMENT__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARGUMENT__TYPE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARGUMENT_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link theoryextension.impl.RecursivityImpl <em>Recursivity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see theoryextension.impl.RecursivityImpl
-	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRecursivity()
-	 * @generated
-	 */
-	int RECURSIVITY = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__ANNOTATIONS = CorePackage.EVENT_BCOMMENTED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__EXTENSIONS = CorePackage.EVENT_BCOMMENTED_ELEMENT__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__ATTRIBUTES = CorePackage.EVENT_BCOMMENTED_ELEMENT__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Reference</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__REFERENCE = CorePackage.EVENT_BCOMMENTED_ELEMENT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Generated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__GENERATED = CorePackage.EVENT_BCOMMENTED_ELEMENT__GENERATED;
-
-	/**
-	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__LOCAL_GENERATED = CorePackage.EVENT_BCOMMENTED_ELEMENT__LOCAL_GENERATED;
-
-	/**
-	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__INTERNAL_ID = CorePackage.EVENT_BCOMMENTED_ELEMENT__INTERNAL_ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__COMMENT = CorePackage.EVENT_BCOMMENTED_ELEMENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Case</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY__CASE = CorePackage.EVENT_BCOMMENTED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Recursivity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECURSIVITY_FEATURE_COUNT = CorePackage.EVENT_BCOMMENTED_ELEMENT_FEATURE_COUNT + 1;
+	int ARGUMENT_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.TypeImpl <em>Type</em>}' class.
@@ -640,7 +540,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 6;
+	int TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -758,7 +658,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConstructor()
 	 * @generated
 	 */
-	int CONSTRUCTOR = 7;
+	int CONSTRUCTOR = 6;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -867,7 +767,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getDestructor()
 	 * @generated
 	 */
-	int DESTRUCTOR = 8;
+	int DESTRUCTOR = 7;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -976,7 +876,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getAxiom()
 	 * @generated
 	 */
-	int AXIOM = 9;
+	int AXIOM = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1085,7 +985,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getTheorem()
 	 * @generated
 	 */
-	int THEOREM = 10;
+	int THEOREM = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1194,7 +1094,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRule()
 	 * @generated
 	 */
-	int RULE = 11;
+	int RULE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1278,13 +1178,22 @@ public interface TheoryextensionPackage extends EPackage {
 	int RULE__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Rule</b></em>' containment reference.
+	 * The feature id for the '<em><b>Rrule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__RULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+	int RULE__RRULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Irule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE__IRULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -1293,7 +1202,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
+	int RULE_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.RewriteRuleImpl <em>Rewrite Rule</em>}' class.
@@ -1303,7 +1212,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRewriteRule()
 	 * @generated
 	 */
-	int REWRITE_RULE = 12;
+	int REWRITE_RULE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1351,13 +1260,31 @@ public interface TheoryextensionPackage extends EPackage {
 	int REWRITE_RULE__PATTERN = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Urule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REWRITE_RULE__URULE = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Crule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REWRITE_RULE__CRULE = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Rewrite Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REWRITE_RULE_FEATURE_COUNT = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 4;
+	int REWRITE_RULE_FEATURE_COUNT = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.RewriteImpl <em>Rewrite</em>}' class.
@@ -1367,7 +1294,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRewrite()
 	 * @generated
 	 */
-	int REWRITE = 13;
+	int REWRITE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1485,7 +1412,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getUnconditionalRewrite()
 	 * @generated
 	 */
-	int UNCONDITIONAL_REWRITE = 14;
+	int UNCONDITIONAL_REWRITE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Rhs</b></em>' attribute list.
@@ -1513,7 +1440,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewrite()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE = 15;
+	int CONDITIONAL_REWRITE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Rewrites</b></em>' containment reference list.
@@ -1541,7 +1468,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewriteRule()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE_RULE = 16;
+	int CONDITIONAL_REWRITE_RULE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1587,7 +1514,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInferenceRule()
 	 * @generated
 	 */
-	int INFERENCE_RULE = 17;
+	int INFERENCE_RULE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Given</b></em>' containment reference list.
@@ -1642,7 +1569,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getGiven()
 	 * @generated
 	 */
-	int GIVEN = 18;
+	int GIVEN = 17;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1679,7 +1606,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInfer()
 	 * @generated
 	 */
-	int INFER = 19;
+	int INFER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1707,7 +1634,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 20;
+	int VARIABLE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1791,7 +1718,7 @@ public interface TheoryextensionPackage extends EPackage {
 	int VARIABLE__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1809,16 +1736,6 @@ public interface TheoryextensionPackage extends EPackage {
 	int VARIABLE_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link theoryextension.OperatorType <em>Operator Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see theoryextension.OperatorType
-	 * @see theoryextension.impl.TheoryextensionPackageImpl#getOperatorType()
-	 * @generated
-	 */
-	int OPERATOR_TYPE = 21;
-
-	/**
 	 * The meta object id for the '{@link theoryextension.Notation <em>Notation</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1826,7 +1743,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getNotation()
 	 * @generated
 	 */
-	int NOTATION = 22;
+	int NOTATION = 20;
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Theory <em>Theory</em>}'.
@@ -2035,6 +1952,17 @@ public interface TheoryextensionPackage extends EPackage {
 	EAttribute getOperator_Definition();
 
 	/**
+	 * Returns the meta object for the attribute '{@link theoryextension.Operator#getCase <em>Case</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Case</em>'.
+	 * @see theoryextension.Operator#getCase()
+	 * @see #getOperator()
+	 * @generated
+	 */
+	EAttribute getOperator_Case();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link theoryextension.Operator#getCases <em>Cases</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2044,17 +1972,6 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOperator_Cases();
-
-	/**
-	 * Returns the meta object for the reference list '{@link theoryextension.Operator#getRecursivities <em>Recursivities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Recursivities</em>'.
-	 * @see theoryextension.Operator#getRecursivities()
-	 * @see #getOperator()
-	 * @generated
-	 */
-	EReference getOperator_Recursivities();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Case <em>Case</em>}'.
@@ -2099,25 +2016,15 @@ public interface TheoryextensionPackage extends EPackage {
 	EClass getArgument();
 
 	/**
-	 * Returns the meta object for class '{@link theoryextension.Recursivity <em>Recursivity</em>}'.
+	 * Returns the meta object for the attribute '{@link theoryextension.Argument#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Recursivity</em>'.
-	 * @see theoryextension.Recursivity
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see theoryextension.Argument#getType()
+	 * @see #getArgument()
 	 * @generated
 	 */
-	EClass getRecursivity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link theoryextension.Recursivity#getCase <em>Case</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Case</em>'.
-	 * @see theoryextension.Recursivity#getCase()
-	 * @see #getRecursivity()
-	 * @generated
-	 */
-	EAttribute getRecursivity_Case();
+	EAttribute getArgument_Type();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Type <em>Type</em>}'.
@@ -2246,15 +2153,26 @@ public interface TheoryextensionPackage extends EPackage {
 	EClass getRule();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link theoryextension.Rule#getRule <em>Rule</em>}'.
+	 * Returns the meta object for the containment reference '{@link theoryextension.Rule#getRrule <em>Rrule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Rule</em>'.
-	 * @see theoryextension.Rule#getRule()
+	 * @return the meta object for the containment reference '<em>Rrule</em>'.
+	 * @see theoryextension.Rule#getRrule()
 	 * @see #getRule()
 	 * @generated
 	 */
-	EReference getRule_Rule();
+	EReference getRule_Rrule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link theoryextension.Rule#getIrule <em>Irule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Irule</em>'.
+	 * @see theoryextension.Rule#getIrule()
+	 * @see #getRule()
+	 * @generated
+	 */
+	EReference getRule_Irule();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.RewriteRule <em>Rewrite Rule</em>}'.
@@ -2309,6 +2227,28 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRewriteRule_Pattern();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link theoryextension.RewriteRule#getUrule <em>Urule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Urule</em>'.
+	 * @see theoryextension.RewriteRule#getUrule()
+	 * @see #getRewriteRule()
+	 * @generated
+	 */
+	EReference getRewriteRule_Urule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link theoryextension.RewriteRule#getCrule <em>Crule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Crule</em>'.
+	 * @see theoryextension.RewriteRule#getCrule()
+	 * @see #getRewriteRule()
+	 * @generated
+	 */
+	EReference getRewriteRule_Crule();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Rewrite <em>Rewrite</em>}'.
@@ -2501,25 +2441,15 @@ public interface TheoryextensionPackage extends EPackage {
 	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the reference '{@link theoryextension.Variable#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link theoryextension.Variable#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see theoryextension.Variable#getType()
 	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getVariable_Type();
-
-	/**
-	 * Returns the meta object for enum '{@link theoryextension.OperatorType <em>Operator Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Operator Type</em>'.
-	 * @see theoryextension.OperatorType
-	 * @generated
-	 */
-	EEnum getOperatorType();
+	EAttribute getVariable_Type();
 
 	/**
 	 * Returns the meta object for enum '{@link theoryextension.Notation <em>Notation</em>}'.
@@ -2713,20 +2643,20 @@ public interface TheoryextensionPackage extends EPackage {
 		EAttribute OPERATOR__DEFINITION = eINSTANCE.getOperator_Definition();
 
 		/**
+		 * The meta object literal for the '<em><b>Case</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATOR__CASE = eINSTANCE.getOperator_Case();
+
+		/**
 		 * The meta object literal for the '<em><b>Cases</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference OPERATOR__CASES = eINSTANCE.getOperator_Cases();
-
-		/**
-		 * The meta object literal for the '<em><b>Recursivities</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATOR__RECURSIVITIES = eINSTANCE.getOperator_Recursivities();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.CaseImpl <em>Case</em>}' class.
@@ -2765,22 +2695,12 @@ public interface TheoryextensionPackage extends EPackage {
 		EClass ARGUMENT = eINSTANCE.getArgument();
 
 		/**
-		 * The meta object literal for the '{@link theoryextension.impl.RecursivityImpl <em>Recursivity</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see theoryextension.impl.RecursivityImpl
-		 * @see theoryextension.impl.TheoryextensionPackageImpl#getRecursivity()
-		 * @generated
-		 */
-		EClass RECURSIVITY = eINSTANCE.getRecursivity();
-
-		/**
-		 * The meta object literal for the '<em><b>Case</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RECURSIVITY__CASE = eINSTANCE.getRecursivity_Case();
+		EAttribute ARGUMENT__TYPE = eINSTANCE.getArgument_Type();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.TypeImpl <em>Type</em>}' class.
@@ -2891,12 +2811,20 @@ public interface TheoryextensionPackage extends EPackage {
 		EClass RULE = eINSTANCE.getRule();
 
 		/**
-		 * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Rrule</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RULE__RULE = eINSTANCE.getRule_Rule();
+		EReference RULE__RRULE = eINSTANCE.getRule_Rrule();
+
+		/**
+		 * The meta object literal for the '<em><b>Irule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULE__IRULE = eINSTANCE.getRule_Irule();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.RewriteRuleImpl <em>Rewrite Rule</em>}' class.
@@ -2939,6 +2867,22 @@ public interface TheoryextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REWRITE_RULE__PATTERN = eINSTANCE.getRewriteRule_Pattern();
+
+		/**
+		 * The meta object literal for the '<em><b>Urule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REWRITE_RULE__URULE = eINSTANCE.getRewriteRule_Urule();
+
+		/**
+		 * The meta object literal for the '<em><b>Crule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REWRITE_RULE__CRULE = eINSTANCE.getRewriteRule_Crule();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.RewriteImpl <em>Rewrite</em>}' class.
@@ -3101,22 +3045,12 @@ public interface TheoryextensionPackage extends EPackage {
 		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
-
-		/**
-		 * The meta object literal for the '{@link theoryextension.OperatorType <em>Operator Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see theoryextension.OperatorType
-		 * @see theoryextension.impl.TheoryextensionPackageImpl#getOperatorType()
-		 * @generated
-		 */
-		EEnum OPERATOR_TYPE = eINSTANCE.getOperatorType();
+		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.Notation <em>Notation</em>}' enum.

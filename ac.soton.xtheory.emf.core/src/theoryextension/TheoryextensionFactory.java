@@ -67,15 +67,6 @@ public interface TheoryextensionFactory extends EFactory {
 	Argument createArgument();
 
 	/**
-	 * Returns a new object of class '<em>Recursivity</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Recursivity</em>'.
-	 * @generated
-	 */
-	Recursivity createRecursivity();
-
-	/**
 	 * Returns a new object of class '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

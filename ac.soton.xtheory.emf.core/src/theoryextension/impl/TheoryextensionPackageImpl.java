@@ -24,9 +24,7 @@ import theoryextension.Infer;
 import theoryextension.InferenceRule;
 import theoryextension.Notation;
 import theoryextension.Operator;
-import theoryextension.OperatorType;
 import theoryextension.Parameter;
-import theoryextension.Recursivity;
 import theoryextension.Rewrite;
 import theoryextension.RewriteRule;
 import theoryextension.Rule;
@@ -79,13 +77,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * @generated
 	 */
 	private EClass argumentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass recursivityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,13 +182,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * @generated
 	 */
 	private EClass variableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum operatorTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -447,8 +431,8 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperator_Cases() {
-		return (EReference)operatorEClass.getEStructuralFeatures().get(8);
+	public EAttribute getOperator_Case() {
+		return (EAttribute)operatorEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -456,7 +440,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperator_Recursivities() {
+	public EReference getOperator_Cases() {
 		return (EReference)operatorEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -501,17 +485,8 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRecursivity() {
-		return recursivityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRecursivity_Case() {
-		return (EAttribute)recursivityEClass.getEStructuralFeatures().get(0);
+	public EAttribute getArgument_Type() {
+		return (EAttribute)argumentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -627,8 +602,17 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRule_Rule() {
+	public EReference getRule_Rrule() {
 		return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRule_Irule() {
+		return (EReference)ruleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -674,6 +658,24 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 */
 	public EAttribute getRewriteRule_Pattern() {
 		return (EAttribute)rewriteRuleEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRewriteRule_Urule() {
+		return (EReference)rewriteRuleEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRewriteRule_Crule() {
+		return (EReference)rewriteRuleEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -843,17 +845,8 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVariable_Type() {
-		return (EReference)variableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getOperatorType() {
-		return operatorTypeEEnum;
+	public EAttribute getVariable_Type() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -914,17 +907,15 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		createEAttribute(operatorEClass, OPERATOR__PRECEDENT);
 		createEAttribute(operatorEClass, OPERATOR__WD);
 		createEAttribute(operatorEClass, OPERATOR__DEFINITION);
+		createEAttribute(operatorEClass, OPERATOR__CASE);
 		createEReference(operatorEClass, OPERATOR__CASES);
-		createEReference(operatorEClass, OPERATOR__RECURSIVITIES);
 
 		caseEClass = createEClass(CASE);
 		createEAttribute(caseEClass, CASE__PATTERN);
 		createEAttribute(caseEClass, CASE__FORMULA);
 
 		argumentEClass = createEClass(ARGUMENT);
-
-		recursivityEClass = createEClass(RECURSIVITY);
-		createEAttribute(recursivityEClass, RECURSIVITY__CASE);
+		createEAttribute(argumentEClass, ARGUMENT__TYPE);
 
 		typeEClass = createEClass(TYPE);
 		createEReference(typeEClass, TYPE__CONSTRUCTORS);
@@ -943,13 +934,16 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		createEAttribute(theoremEClass, THEOREM__PREDICATE);
 
 		ruleEClass = createEClass(RULE);
-		createEReference(ruleEClass, RULE__RULE);
+		createEReference(ruleEClass, RULE__RRULE);
+		createEReference(ruleEClass, RULE__IRULE);
 
 		rewriteRuleEClass = createEClass(REWRITE_RULE);
 		createEAttribute(rewriteRuleEClass, REWRITE_RULE__IS_CASE_COMPLETE);
 		createEAttribute(rewriteRuleEClass, REWRITE_RULE__APPLICABILITY_IS_INTERACTIVE);
 		createEAttribute(rewriteRuleEClass, REWRITE_RULE__APPLICABILITY_IS_AUTOMATIC);
 		createEAttribute(rewriteRuleEClass, REWRITE_RULE__PATTERN);
+		createEReference(rewriteRuleEClass, REWRITE_RULE__URULE);
+		createEReference(rewriteRuleEClass, REWRITE_RULE__CRULE);
 
 		rewriteEClass = createEClass(REWRITE);
 		createEAttribute(rewriteEClass, REWRITE__FORMULA);
@@ -976,10 +970,9 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		inferEClass = createEClass(INFER);
 
 		variableEClass = createEClass(VARIABLE);
-		createEReference(variableEClass, VARIABLE__TYPE);
+		createEAttribute(variableEClass, VARIABLE__TYPE);
 
 		// Create enums
-		operatorTypeEEnum = createEEnum(OPERATOR_TYPE);
 		notationEEnum = createEEnum(NOTATION);
 	}
 
@@ -1017,10 +1010,9 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		// Add supertypes to classes
 		theoryEClass.getESuperTypes().add(theCorePackage.getEventBNamed());
 		parameterEClass.getESuperTypes().add(theCorePackage.getEventBNamed());
-		operatorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedActionElement());
+		operatorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		caseEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
 		argumentEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
-		recursivityEClass.getESuperTypes().add(theCorePackage.getEventBCommentedElement());
 		typeEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		constructorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		destructorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
@@ -1049,7 +1041,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperator_Type(), this.getOperatorType(), "Type", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Notation(), this.getNotation(), "notation", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Associative(), theEcorePackage.getEBoolean(), "associative", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Commutative(), theEcorePackage.getEBoolean(), "commutative", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1057,17 +1049,15 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEAttribute(getOperator_Precedent(), theEcorePackage.getEInt(), "precedent", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Wd(), theEcorePackage.getEString(), "wd", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperator_Definition(), theEcorePackage.getEString(), "definition", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperator_Case(), theEcorePackage.getEString(), "case", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperator_Cases(), this.getCase(), null, "cases", null, 0, -1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperator_Recursivities(), this.getRecursivity(), null, "recursivities", null, 0, -1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(caseEClass, Case.class, "Case", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCase_Pattern(), theEcorePackage.getEString(), "pattern", null, 1, 1, Case.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCase_Formula(), theEcorePackage.getEString(), "formula", null, 1, 1, Case.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(recursivityEClass, Recursivity.class, "Recursivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRecursivity_Case(), theEcorePackage.getEString(), "Case", null, 0, 1, Recursivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArgument_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getType_Constructors(), this.getConstructor(), null, "constructors", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1086,13 +1076,16 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEAttribute(getTheorem_Predicate(), theEcorePackage.getEString(), "predicate", null, 1, 1, Theorem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRule_Rule(), theCorePackage.getEventBObject(), null, "rule", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_Rrule(), this.getRewriteRule(), null, "rrule", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRule_Irule(), this.getInferenceRule(), null, "irule", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rewriteRuleEClass, RewriteRule.class, "RewriteRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRewriteRule_IsCaseComplete(), theEcorePackage.getEBoolean(), "IsCaseComplete", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRewriteRule_ApplicabilityIsInteractive(), theEcorePackage.getEBoolean(), "ApplicabilityIsInteractive", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRewriteRule_ApplicabilityIsAutomatic(), theEcorePackage.getEBoolean(), "ApplicabilityIsAutomatic", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRewriteRule_Pattern(), theEcorePackage.getEString(), "pattern", null, 1, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRewriteRule_Urule(), this.getUnconditionalRewrite(), null, "urule", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRewriteRule_Crule(), this.getConditionalRewrite(), null, "crule", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rewriteEClass, Rewrite.class, "Rewrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRewrite_Formula(), theEcorePackage.getEString(), "Formula", null, 0, 1, Rewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1119,13 +1112,9 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEClass(inferEClass, Infer.class, "Infer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_Type(), this.getType(), null, "Type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(operatorTypeEEnum, OperatorType.class, "OperatorType");
-		addEEnumLiteral(operatorTypeEEnum, OperatorType.EXPRESSION);
-		addEEnumLiteral(operatorTypeEEnum, OperatorType.PREDICATE);
-
 		initEEnum(notationEEnum, Notation.class, "Notation");
 		addEEnumLiteral(notationEEnum, Notation.PREFIX);
 		addEEnumLiteral(notationEEnum, Notation.INFIX);

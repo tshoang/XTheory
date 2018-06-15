@@ -208,29 +208,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link theoryextension.Recursivity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RecursivityItemProvider recursivityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link theoryextension.Recursivity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRecursivityAdapter() {
-		if (recursivityItemProvider == null) {
-			recursivityItemProvider = new RecursivityItemProvider(this);
-		}
-
-		return recursivityItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link theoryextension.Type} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -706,7 +683,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 		if (operatorItemProvider != null) operatorItemProvider.dispose();
 		if (caseItemProvider != null) caseItemProvider.dispose();
 		if (argumentItemProvider != null) argumentItemProvider.dispose();
-		if (recursivityItemProvider != null) recursivityItemProvider.dispose();
 		if (typeItemProvider != null) typeItemProvider.dispose();
 		if (constructorItemProvider != null) constructorItemProvider.dispose();
 		if (destructorItemProvider != null) destructorItemProvider.dispose();
@@ -788,14 +764,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 						(createChildParameter
 							(CorePackage.Literals.ANNOTATION__CONTENTS,
 							 TheoryextensionFactory.eINSTANCE.createArgument()));
-
-				
-				annotation = TheoryextensionPackage.Literals.RECURSIVITY.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
-				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
-					newChildDescriptors.add
-						(createChildParameter
-							(CorePackage.Literals.ANNOTATION__CONTENTS,
-							 TheoryextensionFactory.eINSTANCE.createRecursivity()));
 
 				
 				annotation = TheoryextensionPackage.Literals.TYPE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");

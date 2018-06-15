@@ -62,7 +62,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 			case TheoryextensionPackage.OPERATOR: return createOperator();
 			case TheoryextensionPackage.CASE: return createCase();
 			case TheoryextensionPackage.ARGUMENT: return createArgument();
-			case TheoryextensionPackage.RECURSIVITY: return createRecursivity();
 			case TheoryextensionPackage.TYPE: return createType();
 			case TheoryextensionPackage.CONSTRUCTOR: return createConstructor();
 			case TheoryextensionPackage.DESTRUCTOR: return createDestructor();
@@ -91,8 +90,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TheoryextensionPackage.OPERATOR_TYPE:
-				return createOperatorTypeFromString(eDataType, initialValue);
 			case TheoryextensionPackage.NOTATION:
 				return createNotationFromString(eDataType, initialValue);
 			default:
@@ -108,8 +105,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TheoryextensionPackage.OPERATOR_TYPE:
-				return convertOperatorTypeToString(eDataType, instanceValue);
 			case TheoryextensionPackage.NOTATION:
 				return convertNotationToString(eDataType, instanceValue);
 			default:
@@ -165,16 +160,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	public Argument createArgument() {
 		ArgumentImpl argument = new ArgumentImpl();
 		return argument;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Recursivity createRecursivity() {
-		RecursivityImpl recursivity = new RecursivityImpl();
-		return recursivity;
 	}
 
 	/**
@@ -325,26 +310,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	public Variable createVariable() {
 		VariableImpl variable = new VariableImpl();
 		return variable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperatorType createOperatorTypeFromString(EDataType eDataType, String initialValue) {
-		OperatorType result = OperatorType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertOperatorTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

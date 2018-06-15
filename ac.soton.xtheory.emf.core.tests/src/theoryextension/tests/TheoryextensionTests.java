@@ -35,7 +35,6 @@ public class TheoryextensionTests extends TestSuite {
 		suite.addTestSuite(ParameterTest.class);
 		suite.addTestSuite(OperatorTest.class);
 		suite.addTestSuite(ArgumentTest.class);
-		suite.addTestSuite(RecursivityTest.class);
 		suite.addTestSuite(TypeTest.class);
 		suite.addTestSuite(ConstructorTest.class);
 		suite.addTestSuite(DestructorTest.class);

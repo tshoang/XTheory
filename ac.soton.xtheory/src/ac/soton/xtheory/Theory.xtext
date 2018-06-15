@@ -96,16 +96,16 @@ Rule:
 	(comment = (ML_COMMENT | SL_COMMENT))?
 	'@'name=ID':'
 	(
-		rule=RewriteRule |
-		rule=InferenceRule
+		rrule=RewriteRule |
+		irule=InferenceRule
 	)
 ;
 
 RewriteRule:
 	pattern=STRING '=='
 	(
-		rule = UnconditionalRewrite |	
-		rule = ConditionalRewrite
+		urule = UnconditionalRewrite |	
+		crule = ConditionalRewrite
 	)
 ;
 

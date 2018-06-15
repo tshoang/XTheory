@@ -3,7 +3,6 @@
 package theoryextension;
 
 import org.eventb.emf.core.EventBNamedCommentedElement;
-import org.eventb.emf.core.EventBObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,8 @@ import org.eventb.emf.core.EventBObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link theoryextension.Rule#getRule <em>Rule</em>}</li>
+ *   <li>{@link theoryextension.Rule#getRrule <em>Rrule</em>}</li>
+ *   <li>{@link theoryextension.Rule#getIrule <em>Irule</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +23,55 @@ import org.eventb.emf.core.EventBObject;
  */
 public interface Rule extends EventBNamedCommentedElement {
 	/**
-	 * Returns the value of the '<em><b>Rule</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Rrule</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rule</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Rrule</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rule</em>' containment reference.
-	 * @see #setRule(EventBObject)
-	 * @see theoryextension.TheoryextensionPackage#getRule_Rule()
+	 * @return the value of the '<em>Rrule</em>' containment reference.
+	 * @see #setRrule(RewriteRule)
+	 * @see theoryextension.TheoryextensionPackage#getRule_Rrule()
 	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
-	EventBObject getRule();
+	RewriteRule getRrule();
 
 	/**
-	 * Sets the value of the '{@link theoryextension.Rule#getRule <em>Rule</em>}' containment reference.
+	 * Sets the value of the '{@link theoryextension.Rule#getRrule <em>Rrule</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rule</em>' containment reference.
-	 * @see #getRule()
+	 * @param value the new value of the '<em>Rrule</em>' containment reference.
+	 * @see #getRrule()
 	 * @generated
 	 */
-	void setRule(EventBObject value);
+	void setRrule(RewriteRule value);
+
+	/**
+	 * Returns the value of the '<em><b>Irule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Irule</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Irule</em>' containment reference.
+	 * @see #setIrule(InferenceRule)
+	 * @see theoryextension.TheoryextensionPackage#getRule_Irule()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	InferenceRule getIrule();
+
+	/**
+	 * Sets the value of the '{@link theoryextension.Rule#getIrule <em>Irule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Irule</em>' containment reference.
+	 * @see #getIrule()
+	 * @generated
+	 */
+	void setIrule(InferenceRule value);
 
 } // Rule

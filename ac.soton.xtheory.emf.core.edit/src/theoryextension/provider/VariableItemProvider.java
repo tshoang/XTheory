@@ -16,6 +16,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eventb.emf.core.provider.EventBNamedCommentedElementItemProvider;
 
 import theoryextension.TheoryextensionPackage;
@@ -65,13 +67,13 @@ public class VariableItemProvider extends EventBNamedCommentedElementItemProvide
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Variable_Type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Variable_Type_feature", "_UI_Variable_type"),
+				 getString("_UI_Variable_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Variable_type_feature", "_UI_Variable_type"),
 				 TheoryextensionPackage.Literals.VARIABLE__TYPE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -112,6 +114,12 @@ public class VariableItemProvider extends EventBNamedCommentedElementItemProvide
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Variable.class)) {
+			case TheoryextensionPackage.VARIABLE__TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

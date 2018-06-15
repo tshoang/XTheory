@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eventb.emf.core.EventBObject;
 import org.eventb.emf.core.impl.EventBNamedCommentedElementImpl;
+import theoryextension.InferenceRule;
+import theoryextension.RewriteRule;
 import theoryextension.Rule;
 import theoryextension.TheoryextensionPackage;
 
@@ -22,7 +22,8 @@ import theoryextension.TheoryextensionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link theoryextension.impl.RuleImpl#getRule <em>Rule</em>}</li>
+ *   <li>{@link theoryextension.impl.RuleImpl#getRrule <em>Rrule</em>}</li>
+ *   <li>{@link theoryextension.impl.RuleImpl#getIrule <em>Irule</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,15 +31,23 @@ import theoryextension.TheoryextensionPackage;
  */
 public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	/**
-	 * The cached value of the '{@link #getRule() <em>Rule</em>}' containment reference.
+	 * The cached value of the '{@link #getRrule() <em>Rrule</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRule()
+	 * @see #getRrule()
 	 * @generated
 	 * @ordered
 	 */
-	protected EventBObject rule;
-
+	protected RewriteRule rrule;
+	/**
+	 * The cached value of the '{@link #getIrule() <em>Irule</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIrule()
+	 * @generated
+	 * @ordered
+	 */
+	protected InferenceRule irule;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,22 +72,22 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventBObject getRule() {
-		if (rule != null && rule.eIsProxy()) {
-			InternalEObject oldRule = (InternalEObject)rule;
-			rule = (EventBObject)eResolveProxy(oldRule);
-			if (rule != oldRule) {
-				InternalEObject newRule = (InternalEObject)rule;
-				NotificationChain msgs = oldRule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RULE, null, null);
-				if (newRule.eInternalContainer() == null) {
-					msgs = newRule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RULE, null, msgs);
+	public RewriteRule getRrule() {
+		if (rrule != null && rrule.eIsProxy()) {
+			InternalEObject oldRrule = (InternalEObject)rrule;
+			rrule = (RewriteRule)eResolveProxy(oldRrule);
+			if (rrule != oldRrule) {
+				InternalEObject newRrule = (InternalEObject)rrule;
+				NotificationChain msgs = oldRrule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RRULE, null, null);
+				if (newRrule.eInternalContainer() == null) {
+					msgs = newRrule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RRULE, null, msgs);
 				}
 				if (msgs != null) msgs.dispatch();
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TheoryextensionPackage.RULE__RULE, oldRule, rule));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TheoryextensionPackage.RULE__RRULE, oldRrule, rrule));
 			}
 		}
-		return rule;
+		return rrule;
 	}
 
 	/**
@@ -86,8 +95,8 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EventBObject basicGetRule() {
-		return rule;
+	public RewriteRule basicGetRrule() {
+		return rrule;
 	}
 
 	/**
@@ -95,11 +104,11 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRule(EventBObject newRule, NotificationChain msgs) {
-		EventBObject oldRule = rule;
-		rule = newRule;
+	public NotificationChain basicSetRrule(RewriteRule newRrule, NotificationChain msgs) {
+		RewriteRule oldRrule = rrule;
+		rrule = newRrule;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__RULE, oldRule, newRule);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__RRULE, oldRrule, newRrule);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -110,18 +119,84 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRule(EventBObject newRule) {
-		if (newRule != rule) {
+	public void setRrule(RewriteRule newRrule) {
+		if (newRrule != rrule) {
 			NotificationChain msgs = null;
-			if (rule != null)
-				msgs = ((InternalEObject)rule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RULE, null, msgs);
-			if (newRule != null)
-				msgs = ((InternalEObject)newRule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RULE, null, msgs);
-			msgs = basicSetRule(newRule, msgs);
+			if (rrule != null)
+				msgs = ((InternalEObject)rrule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RRULE, null, msgs);
+			if (newRrule != null)
+				msgs = ((InternalEObject)newRrule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__RRULE, null, msgs);
+			msgs = basicSetRrule(newRrule, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__RULE, newRule, newRule));
+			eNotify(new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__RRULE, newRrule, newRrule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InferenceRule getIrule() {
+		if (irule != null && irule.eIsProxy()) {
+			InternalEObject oldIrule = (InternalEObject)irule;
+			irule = (InferenceRule)eResolveProxy(oldIrule);
+			if (irule != oldIrule) {
+				InternalEObject newIrule = (InternalEObject)irule;
+				NotificationChain msgs = oldIrule.eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__IRULE, null, null);
+				if (newIrule.eInternalContainer() == null) {
+					msgs = newIrule.eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__IRULE, null, msgs);
+				}
+				if (msgs != null) msgs.dispatch();
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TheoryextensionPackage.RULE__IRULE, oldIrule, irule));
+			}
+		}
+		return irule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InferenceRule basicGetIrule() {
+		return irule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIrule(InferenceRule newIrule, NotificationChain msgs) {
+		InferenceRule oldIrule = irule;
+		irule = newIrule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__IRULE, oldIrule, newIrule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIrule(InferenceRule newIrule) {
+		if (newIrule != irule) {
+			NotificationChain msgs = null;
+			if (irule != null)
+				msgs = ((InternalEObject)irule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__IRULE, null, msgs);
+			if (newIrule != null)
+				msgs = ((InternalEObject)newIrule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TheoryextensionPackage.RULE__IRULE, null, msgs);
+			msgs = basicSetIrule(newIrule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TheoryextensionPackage.RULE__IRULE, newIrule, newIrule));
 	}
 
 	/**
@@ -132,8 +207,10 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TheoryextensionPackage.RULE__RULE:
-				return basicSetRule(null, msgs);
+			case TheoryextensionPackage.RULE__RRULE:
+				return basicSetRrule(null, msgs);
+			case TheoryextensionPackage.RULE__IRULE:
+				return basicSetIrule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,9 +223,12 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TheoryextensionPackage.RULE__RULE:
-				if (resolve) return getRule();
-				return basicGetRule();
+			case TheoryextensionPackage.RULE__RRULE:
+				if (resolve) return getRrule();
+				return basicGetRrule();
+			case TheoryextensionPackage.RULE__IRULE:
+				if (resolve) return getIrule();
+				return basicGetIrule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,8 +241,11 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TheoryextensionPackage.RULE__RULE:
-				setRule((EventBObject)newValue);
+			case TheoryextensionPackage.RULE__RRULE:
+				setRrule((RewriteRule)newValue);
+				return;
+			case TheoryextensionPackage.RULE__IRULE:
+				setIrule((InferenceRule)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,8 +259,11 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TheoryextensionPackage.RULE__RULE:
-				setRule((EventBObject)null);
+			case TheoryextensionPackage.RULE__RRULE:
+				setRrule((RewriteRule)null);
+				return;
+			case TheoryextensionPackage.RULE__IRULE:
+				setIrule((InferenceRule)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -191,8 +277,10 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TheoryextensionPackage.RULE__RULE:
-				return rule != null;
+			case TheoryextensionPackage.RULE__RRULE:
+				return rrule != null;
+			case TheoryextensionPackage.RULE__IRULE:
+				return irule != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,13 +5,11 @@ package theoryextension.util;
 import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eventb.emf.core.EventBAction;
 import org.eventb.emf.core.EventBCommented;
 import org.eventb.emf.core.EventBCommentedElement;
 import org.eventb.emf.core.EventBElement;
 import org.eventb.emf.core.EventBExpression;
 import org.eventb.emf.core.EventBNamed;
-import org.eventb.emf.core.EventBNamedCommentedActionElement;
 import org.eventb.emf.core.EventBNamedCommentedElement;
 import org.eventb.emf.core.EventBObject;
 
@@ -109,9 +107,7 @@ public class TheoryextensionSwitch<T> {
 			case TheoryextensionPackage.OPERATOR: {
 				Operator operator = (Operator)theEObject;
 				T result = caseOperator(operator);
-				if (result == null) result = caseEventBNamedCommentedActionElement(operator);
 				if (result == null) result = caseEventBNamedCommentedElement(operator);
-				if (result == null) result = caseEventBAction(operator);
 				if (result == null) result = caseEventBCommentedElement(operator);
 				if (result == null) result = caseEventBNamed(operator);
 				if (result == null) result = caseEventBElement(operator);
@@ -136,16 +132,6 @@ public class TheoryextensionSwitch<T> {
 				if (result == null) result = caseEventBElement(argument);
 				if (result == null) result = caseEventBCommented(argument);
 				if (result == null) result = caseEventBObject(argument);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TheoryextensionPackage.RECURSIVITY: {
-				Recursivity recursivity = (Recursivity)theEObject;
-				T result = caseRecursivity(recursivity);
-				if (result == null) result = caseEventBCommentedElement(recursivity);
-				if (result == null) result = caseEventBElement(recursivity);
-				if (result == null) result = caseEventBCommented(recursivity);
-				if (result == null) result = caseEventBObject(recursivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -368,21 +354,6 @@ public class TheoryextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseArgument(Argument object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Recursivity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Recursivity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRecursivity(Recursivity object) {
 		return null;
 	}
 
@@ -713,36 +684,6 @@ public class TheoryextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseEventBNamedCommentedElement(EventBNamedCommentedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event BAction</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event BAction</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEventBAction(EventBAction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event BNamed Commented Action Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event BNamed Commented Action Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEventBNamedCommentedActionElement(EventBNamedCommentedActionElement object) {
 		return null;
 	}
 
