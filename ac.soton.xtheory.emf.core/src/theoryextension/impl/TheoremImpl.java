@@ -1,12 +1,19 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eventb.emf.core.impl.EventBNamedCommentedElementImpl;
+
 import theoryextension.Theorem;
 import theoryextension.TheoryextensionPackage;
 
@@ -33,6 +40,7 @@ public class TheoremImpl extends EventBNamedCommentedElementImpl implements Theo
 	 * @ordered
 	 */
 	protected static final String PREDICATE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getPredicate() <em>Predicate</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,6 +50,7 @@ public class TheoremImpl extends EventBNamedCommentedElementImpl implements Theo
 	 * @ordered
 	 */
 	protected String predicate = PREDICATE_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

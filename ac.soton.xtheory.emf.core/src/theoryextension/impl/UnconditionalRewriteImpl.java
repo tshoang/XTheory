@@ -1,13 +1,21 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
 import theoryextension.TheoryextensionPackage;
 import theoryextension.UnconditionalRewrite;
 

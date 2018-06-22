@@ -11,7 +11,7 @@ import ac.soton.theory.xtext.scoping.TheoryScopeProvider;
 import ac.soton.theory.xtext.serializer.TheorySemanticSequencer;
 import ac.soton.theory.xtext.serializer.TheorySyntacticSequencer;
 import ac.soton.theory.xtext.services.TheoryGrammarAccess;
-import ac.soton.theory.xtext.validation.TheoryConfigurableIssueCodesProvider;
+//import ac.soton.theory.xtext.validation.TheoryConfigurableIssueCodesProvider;
 import ac.soton.theory.xtext.validation.TheoryValidator;
 import com.google.inject.Binder;
 import com.google.inject.Provider;
@@ -151,9 +151,9 @@ public abstract class AbstractTheoryRuntimeModule extends DefaultRuntimeModule {
 	}
 	
 	// contributed by org.eclipse.xtext.xtext.generator.validation.ValidatorFragment2
-	public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
+	/*public Class<? extends ConfigurableIssueCodesProvider> bindConfigurableIssueCodesProvider() {
 		return TheoryConfigurableIssueCodesProvider.class;
-	}
+	}*/
 	
 	// contributed by org.eclipse.xtext.xtext.generator.scoping.ImportNamespacesScopingFragment2
 	public Class<? extends IScopeProvider> bindIScopeProvider() {

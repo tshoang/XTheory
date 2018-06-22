@@ -1,20 +1,28 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ChildCreationExtenderManager;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -31,9 +39,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import org.eventb.emf.core.Annotation;
 import org.eventb.emf.core.CorePackage;
+
 import org.eventb.emf.core.util.CoreSwitch;
+
 import theoryextension.TheoryextensionFactory;
 import theoryextension.TheoryextensionPackage;
+
 import theoryextension.util.TheoryextensionAdapterFactory;
 
 /**
@@ -369,29 +380,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link theoryextension.Rewrite} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RewriteItemProvider rewriteItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link theoryextension.Rewrite}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRewriteAdapter() {
-		if (rewriteItemProvider == null) {
-			rewriteItemProvider = new RewriteItemProvider(this);
-		}
-
-		return rewriteItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link theoryextension.UnconditionalRewrite} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -690,7 +678,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 		if (theoremItemProvider != null) theoremItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
 		if (rewriteRuleItemProvider != null) rewriteRuleItemProvider.dispose();
-		if (rewriteItemProvider != null) rewriteItemProvider.dispose();
 		if (unconditionalRewriteItemProvider != null) unconditionalRewriteItemProvider.dispose();
 		if (conditionalRewriteItemProvider != null) conditionalRewriteItemProvider.dispose();
 		if (conditionalRewriteRuleItemProvider != null) conditionalRewriteRuleItemProvider.dispose();
@@ -820,14 +807,6 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 						(createChildParameter
 							(CorePackage.Literals.ANNOTATION__CONTENTS,
 							 TheoryextensionFactory.eINSTANCE.createRewriteRule()));
-
-				
-				annotation = TheoryextensionPackage.Literals.REWRITE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
-				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
-					newChildDescriptors.add
-						(createChildParameter
-							(CorePackage.Literals.ANNOTATION__CONTENTS,
-							 TheoryextensionFactory.eINSTANCE.createRewrite()));
 
 				
 				annotation = TheoryextensionPackage.Literals.CONDITIONAL_REWRITE_RULE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");

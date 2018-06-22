@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,13 +32,13 @@ public interface UnconditionalRewrite extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rhs</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Rhs</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rhs</em>' attribute list.
 	 * @see theoryextension.TheoryextensionPackage#getUnconditionalRewrite_Rhs()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<String> getRhs();

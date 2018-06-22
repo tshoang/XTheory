@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
@@ -12,6 +16,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eventb.emf.core.CorePackage;
+
 import theoryextension.Argument;
 import theoryextension.Axiom;
 import theoryextension.Case;
@@ -25,7 +30,6 @@ import theoryextension.InferenceRule;
 import theoryextension.Notation;
 import theoryextension.Operator;
 import theoryextension.Parameter;
-import theoryextension.Rewrite;
 import theoryextension.RewriteRule;
 import theoryextension.Rule;
 import theoryextension.Theorem;
@@ -126,13 +130,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * @generated
 	 */
 	private EClass rewriteRuleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass rewriteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -683,24 +680,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRewrite() {
-		return rewriteEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRewrite_Formula() {
-		return (EAttribute)rewriteEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getUnconditionalRewrite() {
 		return unconditionalRewriteEClass;
 	}
@@ -945,9 +924,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		createEReference(rewriteRuleEClass, REWRITE_RULE__URULE);
 		createEReference(rewriteRuleEClass, REWRITE_RULE__CRULE);
 
-		rewriteEClass = createEClass(REWRITE);
-		createEAttribute(rewriteEClass, REWRITE__FORMULA);
-
 		unconditionalRewriteEClass = createEClass(UNCONDITIONAL_REWRITE);
 		createEAttribute(unconditionalRewriteEClass, UNCONDITIONAL_REWRITE__RHS);
 
@@ -1020,8 +996,6 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		theoremEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		ruleEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		rewriteRuleEClass.getESuperTypes().add(theCorePackage.getEventBObject());
-		rewriteEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
-		rewriteEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
 		conditionalRewriteRuleEClass.getESuperTypes().add(theCorePackage.getEventBObject());
 		givenEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
 		inferEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
@@ -1087,14 +1061,11 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEReference(getRewriteRule_Urule(), this.getUnconditionalRewrite(), null, "urule", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRewriteRule_Crule(), this.getConditionalRewrite(), null, "crule", null, 0, 1, RewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(rewriteEClass, Rewrite.class, "Rewrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRewrite_Formula(), theEcorePackage.getEString(), "Formula", null, 0, 1, Rewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(unconditionalRewriteEClass, UnconditionalRewrite.class, "UnconditionalRewrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUnconditionalRewrite_Rhs(), theEcorePackage.getEString(), "rhs", null, 1, -1, UnconditionalRewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUnconditionalRewrite_Rhs(), theEcorePackage.getEString(), "rhs", null, 0, -1, UnconditionalRewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalRewriteEClass, ConditionalRewrite.class, "ConditionalRewrite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditionalRewrite_Rewrites(), this.getConditionalRewriteRule(), null, "rewrites", null, 1, -1, ConditionalRewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalRewrite_Rewrites(), this.getConditionalRewriteRule(), null, "rewrites", null, 0, -1, ConditionalRewrite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalRewriteRuleEClass, ConditionalRewriteRule.class, "ConditionalRewriteRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConditionalRewriteRule_Lhs(), theEcorePackage.getEString(), "lhs", null, 1, 1, ConditionalRewriteRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

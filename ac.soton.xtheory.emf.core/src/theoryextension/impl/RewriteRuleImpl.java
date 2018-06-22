@@ -1,15 +1,21 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eventb.emf.core.impl.EventBObjectImpl;
+
 import theoryextension.ConditionalRewrite;
 import theoryextension.RewriteRule;
 import theoryextension.TheoryextensionPackage;

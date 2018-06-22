@@ -1,11 +1,19 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eventb.emf.core.impl.EventBNamedCommentedElementImpl;
+
 import theoryextension.Argument;
 import theoryextension.TheoryextensionPackage;
 
@@ -32,6 +40,7 @@ public class ArgumentImpl extends EventBNamedCommentedElementImpl implements Arg
 	 * @ordered
 	 */
 	protected static final String TYPE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

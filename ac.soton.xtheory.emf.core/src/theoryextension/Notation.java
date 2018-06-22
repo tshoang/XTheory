@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
@@ -52,7 +56,7 @@ public enum Notation implements Enumerator {
 	 * The '<em><b>PREFIX</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Prefix</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>PREFIX</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -67,7 +71,7 @@ public enum Notation implements Enumerator {
 	 * The '<em><b>INFIX</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Infix</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>INFIX</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -82,7 +86,7 @@ public enum Notation implements Enumerator {
 	 * The '<em><b>POSTFIX</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>Postfix</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>POSTFIX</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

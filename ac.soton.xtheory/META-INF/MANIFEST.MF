@@ -9,7 +9,7 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="[2.12.0,3.0.0)",
  org.eclipse.xtext.xbase;bundle-version="[2.12.0,3.0.0)",
  org.eclipse.equinox.common;bundle-version="3.5.0",
- ac.soton.eventb.emf.core.theoryextension;bundle-version="0.1.0.qualifier",
+ ac.soton.xtheory.emf.core;bundle-version="1.0.0.qualifier",
  org.eventb.emf.core;bundle-version="[5.0.0,6.0.0)",
  ac.soton.eventb.emf.inclusion;bundle-version="0.1.0",
  org.eclipse.xtext.generator;bundle-version="[2.12.0,3.0.0)",

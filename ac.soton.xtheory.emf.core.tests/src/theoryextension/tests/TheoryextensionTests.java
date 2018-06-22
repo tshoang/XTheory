@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.tests;
 
@@ -42,7 +46,6 @@ public class TheoryextensionTests extends TestSuite {
 		suite.addTestSuite(TheoremTest.class);
 		suite.addTestSuite(RuleTest.class);
 		suite.addTestSuite(RewriteRuleTest.class);
-		suite.addTestSuite(RewriteTest.class);
 		suite.addTestSuite(ConditionalRewriteRuleTest.class);
 		suite.addTestSuite(VariableTest.class);
 		return suite;

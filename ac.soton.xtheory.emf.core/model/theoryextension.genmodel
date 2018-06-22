@@ -71,9 +71,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference theoryextension.ecore#//RewriteRule/urule"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference theoryextension.ecore#//RewriteRule/crule"/>
     </genClasses>
-    <genClasses ecoreClass="theoryextension.ecore#//Rewrite">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//Rewrite/Formula"/>
-    </genClasses>
     <genClasses ecoreClass="theoryextension.ecore#//UnconditionalRewrite">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute theoryextension.ecore#//UnconditionalRewrite/rhs"/>
     </genClasses>

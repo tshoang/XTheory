@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.provider;
 
@@ -32,7 +36,7 @@ import theoryextension.TheoryextensionPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class InferenceRuleItemProvider 
+public class InferenceRuleItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -179,7 +183,6 @@ public class InferenceRuleItemProvider
 		InferenceRule inferenceRule = (InferenceRule)object;
 		return getString("_UI_InferenceRule_type") + " " + inferenceRule.isApplicabilityIsInteractive();
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

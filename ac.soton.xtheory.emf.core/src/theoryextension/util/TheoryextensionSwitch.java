@@ -1,10 +1,16 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.util;
 
 import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
 import org.eventb.emf.core.EventBCommented;
 import org.eventb.emf.core.EventBCommentedElement;
 import org.eventb.emf.core.EventBElement;
@@ -87,7 +93,6 @@ public class TheoryextensionSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case TheoryextensionPackage.THEORY: {
@@ -211,19 +216,6 @@ public class TheoryextensionSwitch<T> {
 				RewriteRule rewriteRule = (RewriteRule)theEObject;
 				T result = caseRewriteRule(rewriteRule);
 				if (result == null) result = caseEventBObject(rewriteRule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TheoryextensionPackage.REWRITE: {
-				Rewrite rewrite = (Rewrite)theEObject;
-				T result = caseRewrite(rewrite);
-				if (result == null) result = caseEventBNamedCommentedElement(rewrite);
-				if (result == null) result = caseEventBExpression(rewrite);
-				if (result == null) result = caseEventBCommentedElement(rewrite);
-				if (result == null) result = caseEventBNamed(rewrite);
-				if (result == null) result = caseEventBElement(rewrite);
-				if (result == null) result = caseEventBCommented(rewrite);
-				if (result == null) result = caseEventBObject(rewrite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -463,21 +455,6 @@ public class TheoryextensionSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rewrite</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rewrite</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRewrite(Rewrite object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Unconditional Rewrite</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -583,17 +560,17 @@ public class TheoryextensionSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event BExpression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Event BNamed</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event BExpression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Event BNamed</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEventBExpression(EventBExpression object) {
+	public T caseEventBNamed(EventBNamed object) {
 		return null;
 	}
 
@@ -658,21 +635,6 @@ public class TheoryextensionSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Event BNamed</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Event BNamed</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEventBNamed(EventBNamed object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Event BNamed Commented Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -688,6 +650,21 @@ public class TheoryextensionSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event BExpression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event BExpression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventBExpression(EventBExpression object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -698,7 +675,6 @@ public class TheoryextensionSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
-	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

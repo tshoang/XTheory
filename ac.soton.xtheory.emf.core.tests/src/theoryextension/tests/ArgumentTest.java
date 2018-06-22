@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.tests;
 
 import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import theoryextension.Argument;
@@ -59,7 +64,6 @@ public class ArgumentTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Argument getFixture() {
 		return fixture;
 	}

@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.provider;
 
@@ -32,7 +36,7 @@ import theoryextension.UnconditionalRewrite;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UnconditionalRewriteItemProvider 
+public class UnconditionalRewriteItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -109,7 +113,6 @@ public class UnconditionalRewriteItemProvider
 	public String getText(Object object) {
 		return getString("_UI_UnconditionalRewrite_type");
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

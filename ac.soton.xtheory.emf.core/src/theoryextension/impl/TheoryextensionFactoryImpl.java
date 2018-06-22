@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
@@ -69,7 +73,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 			case TheoryextensionPackage.THEOREM: return createTheorem();
 			case TheoryextensionPackage.RULE: return createRule();
 			case TheoryextensionPackage.REWRITE_RULE: return createRewriteRule();
-			case TheoryextensionPackage.REWRITE: return createRewrite();
 			case TheoryextensionPackage.UNCONDITIONAL_REWRITE: return createUnconditionalRewrite();
 			case TheoryextensionPackage.CONDITIONAL_REWRITE: return createConditionalRewrite();
 			case TheoryextensionPackage.CONDITIONAL_REWRITE_RULE: return createConditionalRewriteRule();
@@ -230,16 +233,6 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	public RewriteRule createRewriteRule() {
 		RewriteRuleImpl rewriteRule = new RewriteRuleImpl();
 		return rewriteRule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Rewrite createRewrite() {
-		RewriteImpl rewrite = new RewriteImpl();
-		return rewrite;
 	}
 
 	/**

@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
@@ -31,7 +35,7 @@ public interface InferenceRule extends EObject {
 	 * The list contents are of type {@link theoryextension.Given}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Given</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Given</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -46,7 +50,7 @@ public interface InferenceRule extends EObject {
 	 * Returns the value of the '<em><b>Infer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Infer</em>' reference isn't clear,
+	 * If the meaning of the '<em>Infer</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

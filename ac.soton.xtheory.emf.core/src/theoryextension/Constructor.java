@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
@@ -28,7 +32,7 @@ public interface Constructor extends EventBNamedCommentedElement {
 	 * The list contents are of type {@link theoryextension.Destructor}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Destructors</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Destructors</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

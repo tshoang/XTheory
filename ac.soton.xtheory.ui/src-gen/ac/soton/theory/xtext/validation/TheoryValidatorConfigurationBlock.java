@@ -18,7 +18,7 @@ public class TheoryValidatorConfigurationBlock extends AbstractValidatorConfigur
 
 	@Override
 	protected void fillSettingsPage(Composite composite, int nColumns, int defaultIndent) {
-		addComboBox(TheoryConfigurableIssueCodesProvider.DEPRECATED_MODEL_PART, "Deprecated Model Part", composite, defaultIndent);
+		//addComboBox(TheoryConfigurableIssueCodesProvider.DEPRECATED_MODEL_PART, "Deprecated Model Part", composite, defaultIndent);
 	}
 
 	@Override

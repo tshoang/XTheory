@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eventb.emf.core.EventBNamed;
 
 /**
@@ -29,13 +34,12 @@ import org.eventb.emf.core.EventBNamed;
  * @generated
  */
 public interface Theory extends EventBNamed {
-
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Imports</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Imports</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -51,7 +55,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameters</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -67,7 +71,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Operator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Operators</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Operators</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -83,7 +87,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Type}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Types</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -99,7 +103,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Axiom}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Axioms</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Axioms</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -115,7 +119,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Theorem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Theorems</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Theorems</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -131,7 +135,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Rule}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rules</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Rules</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -147,7 +151,7 @@ public interface Theory extends EventBNamed {
 	 * The list contents are of type {@link theoryextension.Variable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Variables</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -157,4 +161,5 @@ public interface Theory extends EventBNamed {
 	 * @generated
 	 */
 	EList<Variable> getVariables();
+
 } // Theory

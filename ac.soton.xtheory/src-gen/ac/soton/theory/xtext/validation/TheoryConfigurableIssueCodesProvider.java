@@ -3,7 +3,7 @@
  */
 package ac.soton.theory.xtext.validation;
 
-import org.eclipse.xtext.preferences.PreferenceKey;
+/*import org.eclipse.xtext.preferences.PreferenceKey;
 import org.eclipse.xtext.util.IAcceptor;
 import org.eclipse.xtext.validation.ConfigurableIssueCodesProvider;
 import org.eclipse.xtext.validation.SeverityConverter;
@@ -19,4 +19,4 @@ public class TheoryConfigurableIssueCodesProvider extends ConfigurableIssueCodes
 		super.initialize(acceptor);
 		acceptor.accept(create(DEPRECATED_MODEL_PART, SeverityConverter.SEVERITY_WARNING));
 	}
-}
+}*/

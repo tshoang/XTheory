@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.tests;
 
 import junit.framework.TestCase;
+
 import junit.textui.TestRunner;
 
 import theoryextension.Theorem;
@@ -59,7 +64,6 @@ public class TheoremTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Theorem getFixture() {
 		return fixture;
 	}

@@ -1,17 +1,26 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eventb.emf.core.impl.EventBNamedImpl;
+
 import theoryextension.Axiom;
 import theoryextension.Operator;
 import theoryextension.Parameter;
@@ -52,6 +61,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<String> imports;
+
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,6 +71,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
 	/**
 	 * The cached value of the '{@link #getOperators() <em>Operators</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,6 +81,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Operator> operators;
+
 	/**
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -79,6 +91,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Type> types;
+
 	/**
 	 * The cached value of the '{@link #getAxioms() <em>Axioms</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -88,6 +101,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Axiom> axioms;
+
 	/**
 	 * The cached value of the '{@link #getTheorems() <em>Theorems</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -97,6 +111,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Theorem> theorems;
+
 	/**
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -106,6 +121,7 @@ public class TheoryImpl extends EventBNamedImpl implements Theory {
 	 * @ordered
 	 */
 	protected EList<Rule> rules;
+
 	/**
 	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

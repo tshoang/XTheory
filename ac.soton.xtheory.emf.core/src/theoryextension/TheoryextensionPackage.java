@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
@@ -17,7 +21,6 @@ import org.eventb.emf.core.CorePackage;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -1287,124 +1290,6 @@ public interface TheoryextensionPackage extends EPackage {
 	int REWRITE_RULE_FEATURE_COUNT = CorePackage.EVENT_BOBJECT_FEATURE_COUNT + 6;
 
 	/**
-	 * The meta object id for the '{@link theoryextension.impl.RewriteImpl <em>Rewrite</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see theoryextension.impl.RewriteImpl
-	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRewrite()
-	 * @generated
-	 */
-	int REWRITE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__EXTENSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' map.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Reference</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__REFERENCE;
-
-	/**
-	 * The feature id for the '<em><b>Generated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__GENERATED;
-
-	/**
-	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__LOCAL_GENERATED;
-
-	/**
-	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__EXPRESSION = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Formula</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE__FORMULA = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Rewrite</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REWRITE_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link theoryextension.impl.UnconditionalRewriteImpl <em>Unconditional Rewrite</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1412,7 +1297,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getUnconditionalRewrite()
 	 * @generated
 	 */
-	int UNCONDITIONAL_REWRITE = 13;
+	int UNCONDITIONAL_REWRITE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Rhs</b></em>' attribute list.
@@ -1440,7 +1325,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewrite()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE = 14;
+	int CONDITIONAL_REWRITE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Rewrites</b></em>' containment reference list.
@@ -1468,7 +1353,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewriteRule()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE_RULE = 15;
+	int CONDITIONAL_REWRITE_RULE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1514,7 +1399,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInferenceRule()
 	 * @generated
 	 */
-	int INFERENCE_RULE = 16;
+	int INFERENCE_RULE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Given</b></em>' containment reference list.
@@ -1569,7 +1454,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getGiven()
 	 * @generated
 	 */
-	int GIVEN = 17;
+	int GIVEN = 16;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1606,7 +1491,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInfer()
 	 * @generated
 	 */
-	int INFER = 18;
+	int INFER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1634,7 +1519,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 19;
+	int VARIABLE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1743,7 +1628,8 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getNotation()
 	 * @generated
 	 */
-	int NOTATION = 20;
+	int NOTATION = 19;
+
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Theory <em>Theory</em>}'.
@@ -2251,27 +2137,6 @@ public interface TheoryextensionPackage extends EPackage {
 	EReference getRewriteRule_Crule();
 
 	/**
-	 * Returns the meta object for class '{@link theoryextension.Rewrite <em>Rewrite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rewrite</em>'.
-	 * @see theoryextension.Rewrite
-	 * @generated
-	 */
-	EClass getRewrite();
-
-	/**
-	 * Returns the meta object for the attribute '{@link theoryextension.Rewrite#getFormula <em>Formula</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Formula</em>'.
-	 * @see theoryextension.Rewrite#getFormula()
-	 * @see #getRewrite()
-	 * @generated
-	 */
-	EAttribute getRewrite_Formula();
-
-	/**
 	 * Returns the meta object for class '{@link theoryextension.UnconditionalRewrite <em>Unconditional Rewrite</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2476,7 +2341,6 @@ public interface TheoryextensionPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -2883,24 +2747,6 @@ public interface TheoryextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REWRITE_RULE__CRULE = eINSTANCE.getRewriteRule_Crule();
-
-		/**
-		 * The meta object literal for the '{@link theoryextension.impl.RewriteImpl <em>Rewrite</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see theoryextension.impl.RewriteImpl
-		 * @see theoryextension.impl.TheoryextensionPackageImpl#getRewrite()
-		 * @generated
-		 */
-		EClass REWRITE = eINSTANCE.getRewrite();
-
-		/**
-		 * The meta object literal for the '<em><b>Formula</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REWRITE__FORMULA = eINSTANCE.getRewrite_Formula();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.UnconditionalRewriteImpl <em>Unconditional Rewrite</em>}' class.

@@ -1,15 +1,21 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eventb.emf.core.impl.EventBNamedCommentedElementImpl;
+
 import theoryextension.InferenceRule;
 import theoryextension.RewriteRule;
 import theoryextension.Rule;
@@ -39,6 +45,7 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * @ordered
 	 */
 	protected RewriteRule rrule;
+
 	/**
 	 * The cached value of the '{@link #getIrule() <em>Irule</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -48,6 +55,7 @@ public class RuleImpl extends EventBNamedCommentedElementImpl implements Rule {
 	 * @ordered
 	 */
 	protected InferenceRule irule;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

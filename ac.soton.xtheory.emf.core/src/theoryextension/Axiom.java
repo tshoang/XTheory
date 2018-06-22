@@ -1,9 +1,12 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
 import org.eventb.emf.core.EventBNamedCommentedElement;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +25,6 @@ import org.eventb.emf.core.EventBNamedCommentedElement;
  * @generated
  */
 public interface Axiom extends EventBNamedCommentedElement {
-
 	/**
 	 * Returns the value of the '<em><b>Predicate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,4 +50,5 @@ public interface Axiom extends EventBNamedCommentedElement {
 	 * @generated
 	 */
 	void setPredicate(String value);
+
 } // Axiom

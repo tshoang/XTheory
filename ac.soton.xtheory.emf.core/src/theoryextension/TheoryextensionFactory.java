@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
@@ -128,15 +132,6 @@ public interface TheoryextensionFactory extends EFactory {
 	 * @generated
 	 */
 	RewriteRule createRewriteRule();
-
-	/**
-	 * Returns a new object of class '<em>Rewrite</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rewrite</em>'.
-	 * @generated
-	 */
-	Rewrite createRewrite();
 
 	/**
 	 * Returns a new object of class '<em>Unconditional Rewrite</em>'.

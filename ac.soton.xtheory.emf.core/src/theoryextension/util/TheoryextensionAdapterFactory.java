@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.util;
 
@@ -8,6 +12,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.eventb.emf.core.EventBCommented;
 import org.eventb.emf.core.EventBCommentedElement;
 import org.eventb.emf.core.EventBElement;
@@ -121,10 +126,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRewriteRule(RewriteRule object) {
 				return createRewriteRuleAdapter();
-			}
-			@Override
-			public Adapter caseRewrite(Rewrite object) {
-				return createRewriteAdapter();
 			}
 			@Override
 			public Adapter caseUnconditionalRewrite(UnconditionalRewrite object) {
@@ -371,20 +372,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link theoryextension.Rewrite <em>Rewrite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see theoryextension.Rewrite
-	 * @generated
-	 */
-	public Adapter createRewriteAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link theoryextension.UnconditionalRewrite <em>Unconditional Rewrite</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -483,16 +470,16 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBExpression <em>Event BExpression</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBNamed <em>Event BNamed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eventb.emf.core.EventBExpression
+	 * @see org.eventb.emf.core.EventBNamed
 	 * @generated
 	 */
-	public Adapter createEventBExpressionAdapter() {
+	public Adapter createEventBNamedAdapter() {
 		return null;
 	}
 
@@ -553,20 +540,6 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBNamed <em>Event BNamed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eventb.emf.core.EventBNamed
-	 * @generated
-	 */
-	public Adapter createEventBNamedAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBNamedCommentedElement <em>Event BNamed Commented Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -577,6 +550,20 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEventBNamedCommentedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eventb.emf.core.EventBExpression <em>Event BExpression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eventb.emf.core.EventBExpression
+	 * @generated
+	 */
+	public Adapter createEventBExpressionAdapter() {
 		return null;
 	}
 

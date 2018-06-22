@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension.provider;
 
@@ -12,6 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,8 +25,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import theoryextension.ConditionalRewrite;
 import theoryextension.TheoryextensionFactory;
 import theoryextension.TheoryextensionPackage;
@@ -32,7 +37,7 @@ import theoryextension.TheoryextensionPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConditionalRewriteItemProvider 
+public class ConditionalRewriteItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -116,7 +121,6 @@ public class ConditionalRewriteItemProvider
 	public String getText(Object object) {
 		return getString("_UI_ConditionalRewrite_type");
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

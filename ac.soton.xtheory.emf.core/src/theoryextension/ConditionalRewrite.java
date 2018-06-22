@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -33,7 +38,7 @@ public interface ConditionalRewrite extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rewrites</em>' containment reference list.
 	 * @see theoryextension.TheoryextensionPackage#getConditionalRewrite_Rewrites()
-	 * @model containment="true" resolveProxies="true" required="true"
+	 * @model containment="true" resolveProxies="true"
 	 * @generated
 	 */
 	EList<ConditionalRewriteRule> getRewrites();

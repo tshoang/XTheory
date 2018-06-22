@@ -1,8 +1,13 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package theoryextension;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eventb.emf.core.EventBNamedCommentedElement;
 
 /**
@@ -143,7 +148,7 @@ public interface Operator extends EventBNamedCommentedElement {
 	 * The list contents are of type {@link theoryextension.Argument}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Arguments</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Arguments</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -184,7 +189,7 @@ public interface Operator extends EventBNamedCommentedElement {
 	 * Returns the value of the '<em><b>Wd</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Wd</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Wd</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -2,12 +2,15 @@
 <?eclipse version="3.0"?>
 
 <!--
+ <copyright>
+ </copyright>
+
+ $Id$
 -->
 
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated theoryextension -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
@@ -23,7 +26,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated theoryextension -->
       <editor
             id="theoryextension.presentation.TheoryextensionEditorID"
             name="%_UI_TheoryextensionEditor_label"
