@@ -1,4 +1,4 @@
-grammar ac.soton.theory.xtext.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
+grammar ac.soton.xtheory.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
 
 //generate theory "http://www.soton.ac/xtheory/Theory"
 //import "http://emf.eventb.org/models/core/2014" as eventbcore

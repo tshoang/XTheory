@@ -15,5 +15,5 @@ Require-Bundle: ac.soton.xtheory.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.workbench;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ac.soton.theory.xtext.ui.tests;x-internal=true
+Export-Package: ac.soton.xtheory.ui.tests;x-internal=true
 

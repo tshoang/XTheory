@@ -27,15 +27,12 @@ Require-Bundle: org.eclipse.xtext;bundle-version="[2.12.0,3.0.0)",
  org.eclipse.xtend.lib;bundle-version="2.13.0",
  org.eclipse.emf.workspace;bundle-version="1.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ac.soton.theory.xtext.theory,
- ac.soton.theory.xtext.theory.impl,
- ac.soton.theory.xtext.parser.antlr.internal,
- ac.soton.theory.xtext.validation,
- ac.soton.theory.xtext.scoping,
- ac.soton.theory.xtext.parser.antlr,
- ac.soton.theory.xtext.generator,
- ac.soton.theory.xtext.theory.util,
- ac.soton.theory.xtext,
- ac.soton.theory.xtext.serializer,
- ac.soton.theory.xtext.services
+Export-Package: ac.soton.xtheory.validation,
+ ac.soton.xtheory,
+ ac.soton.xtheory.serializer,
+ ac.soton.xtheory.scoping,
+ ac.soton.xtheory.parser.antlr.internal,
+ ac.soton.xtheory.generator,
+ ac.soton.xtheory.services,
+ ac.soton.xtheory.parser.antlr
 Import-Package: org.apache.log4j

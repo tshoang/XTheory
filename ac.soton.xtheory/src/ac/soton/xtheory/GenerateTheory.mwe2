@@ -32,6 +32,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "ac.soton.xtheory.Theory"
 			fileExtensions = "thy"
+			referencedResource = "platform:/resource/ac.soton.xtheory.emf.core/model/theoryextension.genmodel"
 
 			serializer = {
 				generateStub = false

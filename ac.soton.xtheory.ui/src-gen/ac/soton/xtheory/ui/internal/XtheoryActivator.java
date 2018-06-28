@@ -3,8 +3,8 @@
  */
 package ac.soton.xtheory.ui.internal;
 
-import ac.soton.theory.xtext.TheoryRuntimeModule;
-import ac.soton.theory.xtext.ui.TheoryUiModule;
+import ac.soton.xtheory.TheoryRuntimeModule;
+import ac.soton.xtheory.ui.TheoryUiModule;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -23,7 +23,7 @@ import org.osgi.framework.BundleContext;
 public class XtheoryActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "ac.soton.xtheory.ui";
-	public static final String AC_SOTON_THEORY_XTEXT_THEORY = "ac.soton.theory.xtext.Theory";
+	public static final String AC_SOTON_XTHEORY_THEORY = "ac.soton.xtheory.Theory";
 	
 	private static final Logger logger = Logger.getLogger(XtheoryActivator.class);
 	
@@ -73,14 +73,14 @@ public class XtheoryActivator extends AbstractUIPlugin {
 	}
 	
 	protected com.google.inject.Module getRuntimeModule(String grammar) {
-		if (AC_SOTON_THEORY_XTEXT_THEORY.equals(grammar)) {
+		if (AC_SOTON_XTHEORY_THEORY.equals(grammar)) {
 			return new TheoryRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
-		if (AC_SOTON_THEORY_XTEXT_THEORY.equals(grammar)) {
+		if (AC_SOTON_XTHEORY_THEORY.equals(grammar)) {
 			return new TheoryUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
