@@ -20,7 +20,9 @@ Require-Bundle: ac.soton.xtheory,
  org.eclipse.xtend.lib;resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ac.soton.xtheory.ui.internal,
- ac.soton.theory.xtext.ui.quickfix,
- ac.soton.theory.xtext.ui.contentassist
+Export-Package: ac.soton.xtheory.ui.contentassist,
+ ac.soton.xtheory.ui.internal,
+ ac.soton.xtheory.ui.labeling,
+ ac.soton.xtheory.ui.outline,
+ ac.soton.xtheory.ui.quickfix
 Bundle-Activator: ac.soton.xtheory.ui.internal.XtheoryActivator

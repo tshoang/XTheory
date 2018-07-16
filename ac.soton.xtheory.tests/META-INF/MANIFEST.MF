@@ -12,5 +12,5 @@ Require-Bundle: ac.soton.xtheory,
  org.eclipse.xtext.xbase.testing,
  org.eclipse.xtext.xbase.lib;bundle-version="2.13.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ac.soton.theory.xtext.tests;x-internal=true
+Export-Package: ac.soton.xtheory.tests
 

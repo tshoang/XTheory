@@ -11,6 +11,6 @@ Require-Bundle: ac.soton.xtheory,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: ac.soton.theory.xtext.ide.contentassist.antlr,
- ac.soton.theory.xtext.ide.contentassist.antlr.internal
+Export-Package: ac.soton.xtheory.ide.contentassist.antlr,
+ ac.soton.xtheory.ide.contentassist.antlr.internal
 
