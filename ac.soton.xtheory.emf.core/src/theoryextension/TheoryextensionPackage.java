@@ -82,13 +82,22 @@ public interface TheoryextensionPackage extends EPackage {
 	int THEORY__NAME = CorePackage.EVENT_BNAMED__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THEORY__ANNOTATIONS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Imports</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__IMPORTS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 0;
+	int THEORY__IMPORTS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -97,7 +106,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__PARAMETERS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 1;
+	int THEORY__PARAMETERS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Operators</b></em>' containment reference list.
@@ -106,7 +115,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__OPERATORS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 2;
+	int THEORY__OPERATORS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
@@ -115,7 +124,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__TYPES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 3;
+	int THEORY__TYPES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Axioms</b></em>' containment reference list.
@@ -124,7 +133,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__AXIOMS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 4;
+	int THEORY__AXIOMS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Theorems</b></em>' containment reference list.
@@ -133,7 +142,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__THEOREMS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 5;
+	int THEORY__THEOREMS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Rules</b></em>' containment reference list.
@@ -142,7 +151,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__RULES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 6;
+	int THEORY__RULES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -151,7 +160,16 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY__VARIABLES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 7;
+	int THEORY__VARIABLES = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Internal Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THEORY__INTERNAL_ELEMENTS = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Theory</em>' class.
@@ -160,7 +178,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int THEORY_FEATURE_COUNT = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 8;
+	int THEORY_FEATURE_COUNT = CorePackage.EVENT_BNAMED_FEATURE_COUNT + 10;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1090,14 +1108,14 @@ public interface TheoryextensionPackage extends EPackage {
 	int THEOREM_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link theoryextension.impl.RuleImpl <em>Rule</em>}' class.
+	 * The meta object id for the '{@link theoryextension.impl.RuleBlockImpl <em>Rule Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see theoryextension.impl.RuleImpl
-	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRule()
+	 * @see theoryextension.impl.RuleBlockImpl
+	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRuleBlock()
 	 * @generated
 	 */
-	int RULE = 10;
+	int RULE_BLOCK = 10;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1106,7 +1124,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ANNOTATIONS;
+	int RULE_BLOCK__ANNOTATIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Extensions</b></em>' containment reference list.
@@ -1115,7 +1133,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__EXTENSIONS;
+	int RULE_BLOCK__EXTENSIONS = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__EXTENSIONS;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' map.
@@ -1124,7 +1142,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ATTRIBUTES;
+	int RULE_BLOCK__ATTRIBUTES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -1133,7 +1151,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__REFERENCE;
+	int RULE_BLOCK__REFERENCE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__REFERENCE;
 
 	/**
 	 * The feature id for the '<em><b>Generated</b></em>' attribute.
@@ -1142,7 +1160,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__GENERATED;
+	int RULE_BLOCK__GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__GENERATED;
 
 	/**
 	 * The feature id for the '<em><b>Local Generated</b></em>' attribute.
@@ -1151,7 +1169,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__LOCAL_GENERATED;
+	int RULE_BLOCK__LOCAL_GENERATED = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__LOCAL_GENERATED;
 
 	/**
 	 * The feature id for the '<em><b>Internal Id</b></em>' attribute.
@@ -1160,7 +1178,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
+	int RULE_BLOCK__INTERNAL_ID = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__INTERNAL_ID;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1169,7 +1187,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__COMMENT;
+	int RULE_BLOCK__COMMENT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1178,7 +1196,44 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
+	int RULE_BLOCK__NAME = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Rule</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BLOCK__RULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BLOCK__VARIABLES = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rule Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BLOCK_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link theoryextension.impl.RuleImpl <em>Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see theoryextension.impl.RuleImpl
+	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRule()
+	 * @generated
+	 */
+	int RULE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Rrule</b></em>' containment reference.
@@ -1187,7 +1242,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__RRULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 0;
+	int RULE__RRULE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Irule</b></em>' containment reference.
@@ -1196,7 +1251,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE__IRULE = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 1;
+	int RULE__IRULE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Rule</em>' class.
@@ -1205,7 +1260,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RULE_FEATURE_COUNT = CorePackage.EVENT_BNAMED_COMMENTED_ELEMENT_FEATURE_COUNT + 2;
+	int RULE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link theoryextension.impl.RewriteRuleImpl <em>Rewrite Rule</em>}' class.
@@ -1215,7 +1270,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getRewriteRule()
 	 * @generated
 	 */
-	int REWRITE_RULE = 11;
+	int REWRITE_RULE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1297,7 +1352,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getUnconditionalRewrite()
 	 * @generated
 	 */
-	int UNCONDITIONAL_REWRITE = 12;
+	int UNCONDITIONAL_REWRITE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Rhs</b></em>' attribute list.
@@ -1325,7 +1380,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewrite()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE = 13;
+	int CONDITIONAL_REWRITE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Rewrites</b></em>' containment reference list.
@@ -1353,7 +1408,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getConditionalRewriteRule()
 	 * @generated
 	 */
-	int CONDITIONAL_REWRITE_RULE = 14;
+	int CONDITIONAL_REWRITE_RULE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1399,7 +1454,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInferenceRule()
 	 * @generated
 	 */
-	int INFERENCE_RULE = 15;
+	int INFERENCE_RULE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Given</b></em>' containment reference list.
@@ -1454,7 +1509,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getGiven()
 	 * @generated
 	 */
-	int GIVEN = 16;
+	int GIVEN = 17;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1491,7 +1546,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getInfer()
 	 * @generated
 	 */
-	int INFER = 17;
+	int INFER = 18;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1519,7 +1574,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 18;
+	int VARIABLE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1628,7 +1683,7 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @see theoryextension.impl.TheoryextensionPackageImpl#getNotation()
 	 * @generated
 	 */
-	int NOTATION = 19;
+	int NOTATION = 20;
 
 
 	/**
@@ -1728,6 +1783,17 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTheory_Variables();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link theoryextension.Theory#getInternalElements <em>Internal Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Internal Elements</em>'.
+	 * @see theoryextension.Theory#getInternalElements()
+	 * @see #getTheory()
+	 * @generated
+	 */
+	EReference getTheory_InternalElements();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Parameter <em>Parameter</em>}'.
@@ -2027,6 +2093,38 @@ public interface TheoryextensionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTheorem_Predicate();
+
+	/**
+	 * Returns the meta object for class '{@link theoryextension.RuleBlock <em>Rule Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rule Block</em>'.
+	 * @see theoryextension.RuleBlock
+	 * @generated
+	 */
+	EClass getRuleBlock();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link theoryextension.RuleBlock#getRule <em>Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Rule</em>'.
+	 * @see theoryextension.RuleBlock#getRule()
+	 * @see #getRuleBlock()
+	 * @generated
+	 */
+	EReference getRuleBlock_Rule();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link theoryextension.RuleBlock#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see theoryextension.RuleBlock#getVariables()
+	 * @see #getRuleBlock()
+	 * @generated
+	 */
+	EReference getRuleBlock_Variables();
 
 	/**
 	 * Returns the meta object for class '{@link theoryextension.Rule <em>Rule</em>}'.
@@ -2423,6 +2521,14 @@ public interface TheoryextensionPackage extends EPackage {
 		EReference THEORY__VARIABLES = eINSTANCE.getTheory_Variables();
 
 		/**
+		 * The meta object literal for the '<em><b>Internal Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference THEORY__INTERNAL_ELEMENTS = eINSTANCE.getTheory_InternalElements();
+
+		/**
 		 * The meta object literal for the '{@link theoryextension.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2663,6 +2769,32 @@ public interface TheoryextensionPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute THEOREM__PREDICATE = eINSTANCE.getTheorem_Predicate();
+
+		/**
+		 * The meta object literal for the '{@link theoryextension.impl.RuleBlockImpl <em>Rule Block</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see theoryextension.impl.RuleBlockImpl
+		 * @see theoryextension.impl.TheoryextensionPackageImpl#getRuleBlock()
+		 * @generated
+		 */
+		EClass RULE_BLOCK = eINSTANCE.getRuleBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULE_BLOCK__RULE = eINSTANCE.getRuleBlock_Rule();
+
+		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RULE_BLOCK__VARIABLES = eINSTANCE.getRuleBlock_Variables();
 
 		/**
 		 * The meta object literal for the '{@link theoryextension.impl.RuleImpl <em>Rule</em>}' class.

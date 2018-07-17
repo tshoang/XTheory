@@ -71,6 +71,7 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 			case TheoryextensionPackage.DESTRUCTOR: return createDestructor();
 			case TheoryextensionPackage.AXIOM: return createAxiom();
 			case TheoryextensionPackage.THEOREM: return createTheorem();
+			case TheoryextensionPackage.RULE_BLOCK: return createRuleBlock();
 			case TheoryextensionPackage.RULE: return createRule();
 			case TheoryextensionPackage.REWRITE_RULE: return createRewriteRule();
 			case TheoryextensionPackage.UNCONDITIONAL_REWRITE: return createUnconditionalRewrite();
@@ -213,6 +214,16 @@ public class TheoryextensionFactoryImpl extends EFactoryImpl implements Theoryex
 	public Theorem createTheorem() {
 		TheoremImpl theorem = new TheoremImpl();
 		return theorem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuleBlock createRuleBlock() {
+		RuleBlockImpl ruleBlock = new RuleBlockImpl();
+		return ruleBlock;
 	}
 
 	/**

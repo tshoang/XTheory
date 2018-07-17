@@ -38,6 +38,7 @@ Workflow {
 				generateStub = false
 			}
 			validator = {
+				composedCheck = "ac.soton.xtheory.validation.TheoryValidator"
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
 		}

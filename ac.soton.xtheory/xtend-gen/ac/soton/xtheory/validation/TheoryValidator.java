@@ -4,6 +4,16 @@
 package ac.soton.xtheory.validation;
 
 import ac.soton.xtheory.validation.AbstractTheoryValidator;
+import com.google.common.base.Objects;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.validation.Check;
+import theoryextension.Constructor;
+import theoryextension.Destructor;
+import theoryextension.Notation;
+import theoryextension.Operator;
+import theoryextension.Theory;
+import theoryextension.Type;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +22,122 @@ import ac.soton.xtheory.validation.AbstractTheoryValidator;
  */
 @SuppressWarnings("all")
 public class TheoryValidator extends AbstractTheoryValidator {
+  @Check
+  public void checkTheoryName(final Theory thy) {
+    final Resource res = thy.eResource();
+    final String fileName = res.getURI().lastSegment().toString();
+    final String thyName = fileName.substring(0, fileName.indexOf("."));
+    String _name = thy.getName();
+    boolean _notEquals = (!Objects.equal(thyName, _name));
+    if (_notEquals) {
+      this.error("Theory name should be the same as the file name", null);
+    }
+  }
+  
+  /**
+   * // Check the name of the theory parameters as they must be distinct one another
+   * @Check
+   * def checkTheoryParametersName(Theory thy){
+   * var i=0
+   * for(; i<thy.parameters.size() ; i++){
+   * var j=i+1
+   * for(; j<thy.parameters.size() ; j++){
+   * if (thy.parameters.get(i).name == thy.parameters.get(j).name)
+   * error("Theory parameters' names should be distinct", thy.parameters.get(i).eClass().getEAllStructuralFeatures().get(0))
+   * //if none, all the file is underlined. Here we only have the theory name underlined
+   * }
+   * }
+   * }
+   */
+  @Check
+  public void checkInternalElementsName(final Theory thy) {
+    int i = 0;
+    for (; (i < thy.getInternalElements().size()); i++) {
+      {
+        int j = (i + 1);
+        for (; (j < thy.getInternalElements().size()); j++) {
+          String _name = thy.getInternalElements().get(i).getName();
+          String _name_1 = thy.getInternalElements().get(j).getName();
+          boolean _equals = Objects.equal(_name, _name_1);
+          if (_equals) {
+            this.error("Internal elements\' names should be distinct", thy.getInternalElements().get(i).eClass().getEAllStructuralFeatures().get(0));
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkDestructorName(final Constructor cons) {
+    EList<Destructor> _destructors = cons.getDestructors();
+    for (final Destructor des : _destructors) {
+      String _name = cons.getName();
+      String _name_1 = des.getName();
+      boolean _equals = Objects.equal(_name, _name_1);
+      if (_equals) {
+        this.error("Constructor and destructor name should be distinct", null);
+      }
+    }
+  }
+  
+  @Check
+  public void checkInfixArgumentsNumber(final Operator op) {
+    if ((Objects.equal(op.getNotation(), Notation.INFIX) && (!(op.getArguments().size() == 2)))) {
+      this.error("Infix operator must need at least two arguments", null);
+    }
+  }
+  
+  @Check
+  public void checkPostfixArgumentsNumber(final Operator op) {
+    if ((Objects.equal(op.getNotation(), Notation.POSTFIX) && (!(op.getArguments().size() > 0)))) {
+      this.error("Postfix operator must need at least one argument", null);
+    }
+  }
+  
+  @Check
+  public void checkCaseIsArgument(final Operator op) {
+    boolean flag = false;
+    int i = 0;
+    for (; (i < op.getArguments().size()); i++) {
+      String _name = op.getArguments().get(i).getName();
+      String _case = op.getCase();
+      boolean _equals = Objects.equal(_name, _case);
+      if (_equals) {
+        flag = true;
+      }
+    }
+    if ((!flag)) {
+      this.error("Case must be an argument", null);
+    }
+  }
+  
+  @Check
+  public void checkAssociativeArgumentsNumber(final Operator op) {
+    if ((op.isAssociative() && (op.getArguments().size() < 2))) {
+      this.error("An associative operator must have at least 2 arguments", null);
+    }
+  }
+  
+  @Check
+  public void checkCommutativeArgumentsNumber(final Operator op) {
+    if ((op.isCommutative() && (op.getArguments().size() < 2))) {
+      this.error("A commutative operator must have at least 2 arguments", null);
+    }
+  }
+  
+  @Check
+  public void checkBaseConstrutor(final Type type) {
+    boolean flag = true;
+    EList<Constructor> _constructors = type.getConstructors();
+    for (final Constructor cons : _constructors) {
+      int _size = cons.getDestructors().size();
+      boolean _equals = (_size == 0);
+      if (_equals) {
+        flag = false;
+      }
+    }
+    if (flag) {
+      this.error("A type needs a base constructor", null);
+    }
+  }
 }

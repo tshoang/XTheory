@@ -334,6 +334,29 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link theoryextension.RuleBlock} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RuleBlockItemProvider ruleBlockItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link theoryextension.RuleBlock}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRuleBlockAdapter() {
+		if (ruleBlockItemProvider == null) {
+			ruleBlockItemProvider = new RuleBlockItemProvider(this);
+		}
+
+		return ruleBlockItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link theoryextension.Rule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -676,6 +699,7 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 		if (destructorItemProvider != null) destructorItemProvider.dispose();
 		if (axiomItemProvider != null) axiomItemProvider.dispose();
 		if (theoremItemProvider != null) theoremItemProvider.dispose();
+		if (ruleBlockItemProvider != null) ruleBlockItemProvider.dispose();
 		if (ruleItemProvider != null) ruleItemProvider.dispose();
 		if (rewriteRuleItemProvider != null) rewriteRuleItemProvider.dispose();
 		if (unconditionalRewriteItemProvider != null) unconditionalRewriteItemProvider.dispose();
@@ -737,6 +761,14 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 			
 			EAnnotation annotation = null;
 				
+				annotation = TheoryextensionPackage.Literals.THEORY.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
+					newChildDescriptors.add
+						(createChildParameter
+							(CorePackage.Literals.ANNOTATION__CONTENTS,
+							 TheoryextensionFactory.eINSTANCE.createTheory()));
+
+				
 				annotation = TheoryextensionPackage.Literals.OPERATOR.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
 				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
 					newChildDescriptors.add
@@ -793,12 +825,12 @@ public class TheoryextensionItemProviderAdapterFactory extends TheoryextensionAd
 							 TheoryextensionFactory.eINSTANCE.createTheorem()));
 
 				
-				annotation = TheoryextensionPackage.Literals.RULE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
+				annotation = TheoryextensionPackage.Literals.RULE_BLOCK.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");
 				if (annotation == null  || annotation.getReferences().contains(object.eClass()))
 					newChildDescriptors.add
 						(createChildParameter
 							(CorePackage.Literals.ANNOTATION__CONTENTS,
-							 TheoryextensionFactory.eINSTANCE.createRule()));
+							 TheoryextensionFactory.eINSTANCE.createRuleBlock()));
 
 				
 				annotation = TheoryextensionPackage.Literals.REWRITE_RULE.getEAnnotation("org.eventb.emf.core.extendedMetaClasses");

@@ -44,7 +44,7 @@ public class TheoryextensionTests extends TestSuite {
 		suite.addTestSuite(DestructorTest.class);
 		suite.addTestSuite(AxiomTest.class);
 		suite.addTestSuite(TheoremTest.class);
-		suite.addTestSuite(RuleTest.class);
+		suite.addTestSuite(RuleBlockTest.class);
 		suite.addTestSuite(RewriteRuleTest.class);
 		suite.addTestSuite(ConditionalRewriteRuleTest.class);
 		suite.addTestSuite(VariableTest.class);

@@ -120,6 +120,10 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 				return createTheoremAdapter();
 			}
 			@Override
+			public Adapter caseRuleBlock(RuleBlock object) {
+				return createRuleBlockAdapter();
+			}
+			@Override
 			public Adapter caseRule(Rule object) {
 				return createRuleAdapter();
 			}
@@ -340,6 +344,20 @@ public class TheoryextensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTheoremAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link theoryextension.RuleBlock <em>Rule Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see theoryextension.RuleBlock
+	 * @generated
+	 */
+	public Adapter createRuleBlockAdapter() {
 		return null;
 	}
 

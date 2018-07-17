@@ -116,6 +116,15 @@ public interface TheoryextensionFactory extends EFactory {
 	Theorem createTheorem();
 
 	/**
+	 * Returns a new object of class '<em>Rule Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rule Block</em>'.
+	 * @generated
+	 */
+	RuleBlock createRuleBlock();
+
+	/**
 	 * Returns a new object of class '<em>Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

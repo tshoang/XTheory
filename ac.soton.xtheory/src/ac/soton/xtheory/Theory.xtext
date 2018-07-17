@@ -9,14 +9,11 @@ Theory:
 	'theory' name=ID ('(' parameters+=Parameter+')')?
 	('imports' imports +=ID (imports += ID)*)?
 	(
-		('types' types += Type+) |
-		('operators' operators += Operator+) |
-		('axioms' axioms += Axiom+) |
-		('theorems' theorems += Theorem+) |
-		('rules' 		
-			('variables' variables += Variable+)?
-			rules += Rule+
-		)
+		('types' internalElements += Type+) |
+		('operators' internalElements += Operator+) |
+		('axioms' internalElements += Axiom+) |
+		('theorems' internalElements += Theorem+) |
+		('rules' internalElements += RuleBlock+)
 	)*
 	'end'
 ;
@@ -30,8 +27,8 @@ Type:
 	name=ID
 	(
 		'(' parameters += [Parameter]+')'
-	 	'=' constructors += Constructor ('|' constructors += Constructor)*
 	)?
+	'=' constructors += Constructor ('|' constructors += Constructor)*
 ;
 
 Constructor:
@@ -87,18 +84,27 @@ Theorem:
 	'@'name=ID':' predicate=STRING
 ;
 
-Variable:
+RuleBlock: 
 	(comment = (ML_COMMENT | SL_COMMENT))?
-	name=ID ':' type=STRING
+	'@'name=ID':'
+	(
+		('variables' variables += Variable+)?
+		rule = Rule
+	)
 ;
 
 Rule:
-	(comment = (ML_COMMENT | SL_COMMENT))?
-	'@'name=ID':'
+	//(comment = (ML_COMMENT | SL_COMMENT))?
+	//'@'name=ID':'
 	(
 		rrule=RewriteRule |
 		irule=InferenceRule
 	)
+;
+
+Variable:
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	name=ID ':' type=STRING
 ;
 
 RewriteRule:

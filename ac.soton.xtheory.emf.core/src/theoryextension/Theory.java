@@ -9,6 +9,7 @@ package theoryextension;
 import org.eclipse.emf.common.util.EList;
 
 import org.eventb.emf.core.EventBNamed;
+import org.eventb.emf.core.EventBObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +27,7 @@ import org.eventb.emf.core.EventBNamed;
  *   <li>{@link theoryextension.Theory#getTheorems <em>Theorems</em>}</li>
  *   <li>{@link theoryextension.Theory#getRules <em>Rules</em>}</li>
  *   <li>{@link theoryextension.Theory#getVariables <em>Variables</em>}</li>
+ *   <li>{@link theoryextension.Theory#getInternalElements <em>Internal Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,7 +35,7 @@ import org.eventb.emf.core.EventBNamed;
  * @model
  * @generated
  */
-public interface Theory extends EventBNamed {
+public interface Theory extends EventBNamed, EventBObject {
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
@@ -161,5 +163,21 @@ public interface Theory extends EventBNamed {
 	 * @generated
 	 */
 	EList<Variable> getVariables();
+
+	/**
+	 * Returns the value of the '<em><b>Internal Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link org.eventb.emf.core.EventBNamed}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Internal Elements</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Internal Elements</em>' containment reference list.
+	 * @see theoryextension.TheoryextensionPackage#getTheory_InternalElements()
+	 * @model containment="true" resolveProxies="true"
+	 * @generated
+	 */
+	EList<EventBNamed> getInternalElements();
 
 } // Theory

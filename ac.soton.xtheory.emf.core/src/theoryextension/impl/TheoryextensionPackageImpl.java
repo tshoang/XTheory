@@ -32,6 +32,7 @@ import theoryextension.Operator;
 import theoryextension.Parameter;
 import theoryextension.RewriteRule;
 import theoryextension.Rule;
+import theoryextension.RuleBlock;
 import theoryextension.Theorem;
 import theoryextension.Theory;
 import theoryextension.TheoryextensionFactory;
@@ -116,6 +117,13 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 * @generated
 	 */
 	private EClass theoremEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ruleBlockEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -331,6 +339,15 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 */
 	public EReference getTheory_Variables() {
 		return (EReference)theoryEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTheory_InternalElements() {
+		return (EReference)theoryEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -583,6 +600,33 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 	 */
 	public EAttribute getTheorem_Predicate() {
 		return (EAttribute)theoremEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRuleBlock() {
+		return ruleBlockEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleBlock_Rule() {
+		return (EReference)ruleBlockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRuleBlock_Variables() {
+		return (EReference)ruleBlockEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -874,6 +918,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		createEReference(theoryEClass, THEORY__THEOREMS);
 		createEReference(theoryEClass, THEORY__RULES);
 		createEReference(theoryEClass, THEORY__VARIABLES);
+		createEReference(theoryEClass, THEORY__INTERNAL_ELEMENTS);
 
 		parameterEClass = createEClass(PARAMETER);
 
@@ -911,6 +956,10 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 
 		theoremEClass = createEClass(THEOREM);
 		createEAttribute(theoremEClass, THEOREM__PREDICATE);
+
+		ruleBlockEClass = createEClass(RULE_BLOCK);
+		createEReference(ruleBlockEClass, RULE_BLOCK__RULE);
+		createEReference(ruleBlockEClass, RULE_BLOCK__VARIABLES);
 
 		ruleEClass = createEClass(RULE);
 		createEReference(ruleEClass, RULE__RRULE);
@@ -985,6 +1034,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 
 		// Add supertypes to classes
 		theoryEClass.getESuperTypes().add(theCorePackage.getEventBNamed());
+		theoryEClass.getESuperTypes().add(theCorePackage.getEventBObject());
 		parameterEClass.getESuperTypes().add(theCorePackage.getEventBNamed());
 		operatorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		caseEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
@@ -994,7 +1044,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		destructorEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		axiomEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		theoremEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
-		ruleEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
+		ruleBlockEClass.getESuperTypes().add(theCorePackage.getEventBNamedCommentedElement());
 		rewriteRuleEClass.getESuperTypes().add(theCorePackage.getEventBObject());
 		conditionalRewriteRuleEClass.getESuperTypes().add(theCorePackage.getEventBObject());
 		givenEClass.getESuperTypes().add(theCorePackage.getEventBExpression());
@@ -1011,6 +1061,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEReference(getTheory_Theorems(), this.getTheorem(), null, "theorems", null, 0, -1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTheory_Rules(), this.getRule(), null, "rules", null, 0, -1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTheory_Variables(), this.getVariable(), null, "variables", null, 0, -1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTheory_InternalElements(), theCorePackage.getEventBNamed(), null, "internalElements", null, 0, -1, Theory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1034,7 +1085,7 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 		initEAttribute(getArgument_Type(), theEcorePackage.getEString(), "type", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getType_Constructors(), this.getConstructor(), null, "constructors", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getType_Constructors(), this.getConstructor(), null, "constructors", null, 1, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getType_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constructorEClass, Constructor.class, "Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1048,6 +1099,10 @@ public class TheoryextensionPackageImpl extends EPackageImpl implements Theoryex
 
 		initEClass(theoremEClass, Theorem.class, "Theorem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTheorem_Predicate(), theEcorePackage.getEString(), "predicate", null, 1, 1, Theorem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ruleBlockEClass, RuleBlock.class, "RuleBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRuleBlock_Rule(), this.getRule(), null, "rule", null, 1, 1, RuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuleBlock_Variables(), this.getVariable(), null, "variables", null, 0, -1, RuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRule_Rrule(), this.getRewriteRule(), null, "rrule", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
