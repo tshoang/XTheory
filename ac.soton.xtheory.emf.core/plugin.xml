@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated theoryextension -->
+      <package
+            uri="http://soton.ac.uk/models/eventb/theoryextension/2018"
+            class="theoryextension.TheoryextensionPackage"
+            genModel="model/theoryextension.genmodel"/>
+   </extension>
+
+</plugin>

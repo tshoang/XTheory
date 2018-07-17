@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="thy"
-			id="ac.soton.theory.xtext.Theory"
+			id="ac.soton.xtheory.Theory"
 			name="Theory Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="ac.soton.theory.xtext.Theory.validate">
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="ac.soton.xtheory.Theory.validate">
 		<activeWhen>
 			<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 			</reference>
 		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened" />
+				<reference definitionId="ac.soton.xtheory.Theory.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="ac.soton.theory.xtext.Theory.XtextEditor.opened" />
+					<reference definitionId="ac.soton.xtheory.Theory.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="ac.soton.theory.xtext.Theory.Editor.opened">
+		<definition id="ac.soton.xtheory.Theory.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ac.soton.theory.xtext.Theory"
+						value="ac.soton.xtheory.Theory"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="ac.soton.theory.xtext.Theory.XtextEditor.opened">
+		<definition id="ac.soton.xtheory.Theory.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="ac.soton.theory.xtext.Theory"
+						value="ac.soton.xtheory.Theory"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ac.soton.theory.xtext.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ac.soton.xtheory.Theory"
 			name="Theory">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="ac.soton.theory.xtext.Theory.coloring"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="ac.soton.xtheory.Theory.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="ac.soton.theory.xtext.Theory.templates"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="ac.soton.xtheory.Theory.templates"
 			name="Templates">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="ac.soton.theory.xtext.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="ac.soton.xtheory.Theory"
 			name="Theory">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="ac.soton.theory.xtext.ui.keyword_Theory"
+			id="ac.soton.xtheory.ui.keyword_Theory"
 			label="Theory"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 	<command
 			description="Trigger expensive validation"
-			id="ac.soton.theory.xtext.Theory.validate"
+			id="ac.soton.xtheory.Theory.validate"
 			name="Validate">
 	</command>
 	<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			 <command
-				 commandId="ac.soton.theory.xtext.Theory.validate"
+				 commandId="ac.soton.xtheory.Theory.validate"
 				 style="push"
 				 tooltip="Trigger expensive validation">
 			<visibleWhen checkEnabled="false">
 				<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 				</reference>
 			</visibleWhen>
 		</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened" />
+					<reference definitionId="ac.soton.xtheory.Theory.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened" />
+					<reference definitionId="ac.soton.xtheory.Theory.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="ac.soton.theory.xtext.Theory.XtextEditor.opened" />
+						<reference definitionId="ac.soton.xtheory.Theory.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					<reference definitionId="ac.soton.xtheory.Theory.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -208,7 +208,7 @@
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
 			file-extensions="thy"
-			id="ac.soton.theory.xtext.Theory.contenttype"
+			id="ac.soton.xtheory.Theory.contenttype"
 			name="Theory File"
 			priority="normal">
 		</content-type>
@@ -217,17 +217,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="thy">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="thy">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for ac.soton.theory.xtext.Theory -->
+	<!-- marker definitions for ac.soton.xtheory.Theory -->
 	<extension
 			id="theory.check.fast"
 			name="Theory Problem"
@@ -251,34 +251,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="ac.soton.theory.xtext.Theory.validator.preferencePage"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="ac.soton.xtheory.Theory.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="thy"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ac.soton.theory.xtext.Theory.compiler.preferencePage"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ac.soton.xtheory.Theory.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="ac.soton.theory.xtext.Theory.compiler.propertyPage"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="ac.soton.xtheory.Theory.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -289,20 +289,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="ac.soton.theory.xtext.Theory.OpenGeneratedCode"
+				id="ac.soton.xtheory.Theory.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened" />
+					<reference definitionId="ac.soton.xtheory.Theory.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened" />
+				<reference definitionId="ac.soton.xtheory.Theory.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -310,11 +310,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -334,16 +334,16 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="ac.soton.theory.xtext.Theory.Editor.opened"/>
+					<reference definitionId="ac.soton.xtheory.Theory.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for ac.soton.theory.xtext.Theory -->
+	<!-- quickfix marker resolution generator for ac.soton.xtheory.Theory -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ac.soton.xtheory.ui.theory.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
@@ -351,7 +351,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ac.soton.xtheory.ui.theory.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
@@ -359,7 +359,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="ac.soton.xtheory.ui.theory.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
@@ -370,11 +370,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+					definitionId="ac.soton.xtheory.Theory.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -386,7 +386,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="ac.soton.theory.xtext.Theory.Editor.opened">
+						definitionId="ac.soton.xtheory.Theory.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -394,34 +394,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="ac.soton.theory.xtext.Theory"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="ac.soton.theory.xtext.Theory.refactoring"
+			category="ac.soton.xtheory.Theory"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="ac.soton.xtheory.Theory.refactoring"
 			name="Refactoring">
-			<keywordReference id="ac.soton.theory.xtext.ui.keyword_Theory"/>
+			<keywordReference id="ac.soton.xtheory.ui.keyword_Theory"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="ac.soton.theory.xtext.Theory.compare.contentViewers"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="ac.soton.xtheory.Theory.compare.contentViewers"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="thy">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ac.soton.theory.xtext.Theory.contenttype"
-			contentViewerId="ac.soton.theory.xtext.Theory.compare.contentViewers" />
+			contentTypeId="ac.soton.xtheory.Theory.contenttype"
+			contentViewerId="ac.soton.xtheory.Theory.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="ac.soton.theory.xtext.Theory.compare.contentMergeViewers"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="ac.soton.xtheory.Theory.compare.contentMergeViewers"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="thy" label="Theory Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="ac.soton.theory.xtext.Theory.contenttype"
-			contentMergeViewerId="ac.soton.theory.xtext.Theory.compare.contentMergeViewers" />
+			contentTypeId="ac.soton.xtheory.Theory.contenttype"
+			contentMergeViewerId="ac.soton.xtheory.Theory.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="ac.soton.theory.xtext.Theory.editors.documentProviders"
-			class="ac.soton.theory.xtext.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="ac.soton.xtheory.Theory.editors.documentProviders"
+			class="ac.soton.xtheory.ui.TheoryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="thy">
 		</provider>
 	</extension>

@@ -1,18 +1,19 @@
-grammar ac.soton.theory.xtext.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
+grammar ac.soton.xtheory.Theory with org.eclipse.xtext.common.Terminals hidden (WS)
 
-generate theory "http://www.soton.ac/xtheory/Theory"
+//generate theory "http://www.soton.ac/xtheory/Theory"
+//import "http://emf.eventb.org/models/core/2014" as eventbcore
+import "http://soton.ac.uk/models/eventb/theoryextension/2018"
+//import "platform:/ressource/ac.soton.eventb.emf.core.theoryextension/model/eventbcoretheoryextension.ecore"
 
 Theory:
 	'theory' name=ID ('(' parameters+=Parameter+')')?
 	('imports' imports +=ID (imports += ID)*)?
 	(
-		('types' types += Type+) |
-		('operators' operators += Operator+) |
-		('axioms' axioms += Axiom+) |
-		('rules' 		
-			('variables' variables += Variable+)?
-			rules += Rule+
-		)
+		('types' internalElements += Type+) |
+		('operators' internalElements += Operator+) |
+		('axioms' internalElements += Axiom+) |
+		('theorems' internalElements += Theorem+) |
+		('rules' internalElements += RuleBlock+)
 	)*
 	'end'
 ;
@@ -22,32 +23,32 @@ Parameter:
 ;
 
 Type:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID
 	(
 		'(' parameters += [Parameter]+')'
-	 	'=' constructors += Constructor ('|' constructors += Constructor)*
 	)?
+	'=' constructors += Constructor ('|' constructors += Constructor)*
 ;
 
 Constructor:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID
 	('(' destructors += Destructor (',' destructors += Destructor)* ')')?	
 ;
 
 Destructor:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ":" type=STRING
 ;
 
 Operator:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ('(' arguments += Argument (',' arguments += Argument)*')')?
 	(
 		(':' type=STRING)? &
 		(notation = Notation)? &
-		(associtive ?= 'associative' commutative ?= 'commutative'?)?
+		(associative ?= 'associative' commutative ?= 'commutative'?)?
 	)
 	('#' precedent=INT)?
 	('for' wd=STRING)?
@@ -62,9 +63,10 @@ Operator:
 ;
 
 Argument:
-	(comments = (ML_COMMENT | SL_COMMENT))?
+	(comment = (ML_COMMENT | SL_COMMENT))?
 	name=ID ":" type=STRING
 ;
+
 enum Notation:
   PREFIX='prefix' | INFIX='infix' | POSTFIX='postfix';
 
@@ -73,29 +75,43 @@ Case:
 ;
 
 Axiom:
-	(comments = (ML_COMMENT | SL_COMMENT))?
-	'@'name=ID':' predicate=STRING (isTheorem?='theorem')?
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':' predicate=STRING
 ;
 
-Variable:
-	(comments = (ML_COMMENT | SL_COMMENT))?
-	name=ID ':' type=STRING
+Theorem:
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':' predicate=STRING
+;
+
+RuleBlock: 
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	'@'name=ID':'
+	(
+		('variables' variables += Variable+)?
+		rule = Rule
+	)
 ;
 
 Rule:
-	(comments = (ML_COMMENT | SL_COMMENT))?
-	'@'name=ID':'
+	//(comment = (ML_COMMENT | SL_COMMENT))?
+	//'@'name=ID':'
 	(
-		rule=RewriteRule |
-		rule=InferenceRule
+		rrule=RewriteRule |
+		irule=InferenceRule
 	)
+;
+
+Variable:
+	(comment = (ML_COMMENT | SL_COMMENT))?
+	name=ID ':' type=STRING
 ;
 
 RewriteRule:
 	pattern=STRING '=='
 	(
-		rule = UnconditionalRewrite |	
-		rule = ConditionalRewrite
+		urule = UnconditionalRewrite |	
+		crule = ConditionalRewrite
 	)
 ;
 
@@ -104,11 +120,11 @@ InferenceRule:
 ;
 
 Given:
-	predicate=STRING (required?='required')?
+	expression=STRING (required?='required')?
 ;
 
 Infer:
-	predicate=STRING
+	expression=STRING
 ;
 
 UnconditionalRewrite: 
@@ -122,5 +138,5 @@ ConditionalRewrite:
 ;
 
 ConditionalRewriteRule:
-	lsh = STRING '=>' rhs = STRING
+	lhs = STRING '=>' rhs = STRING
 ;

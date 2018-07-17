@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="theoryextension.presentation.TheoryextensionModelWizardID"
+            name="%_UI_TheoryextensionModelWizard_label"
+            class="theoryextension.presentation.TheoryextensionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TheoryextensionModelFile.gif">
+         <description>%_UI_TheoryextensionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="theoryextension.presentation.TheoryextensionEditorID"
+            name="%_UI_TheoryextensionEditor_label"
+            icon="icons/full/obj16/TheoryextensionModelFile.gif"
+            extensions="theoryextension"
+            class="theoryextension.presentation.TheoryextensionEditor"
+            contributorClass="theoryextension.presentation.TheoryextensionActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
