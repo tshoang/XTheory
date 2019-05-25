@@ -23,7 +23,11 @@ import org.osgi.framework.BundleContext;
 public class XtheoryActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "ac.soton.xtheory.ui";
+<<<<<<< HEAD
 	public static final String AC_SOTON_XTHEORY_THEORY = "ac.soton.xtheory.Theory";
+=======
+	public static final String AC_SOTON_THEORY_XTEXT_THEORY = "ac.soton.xtheory.Theory";
+>>>>>>> 963616839c6bebea4628b287134ece27bf40cfa7
 	
 	private static final Logger logger = Logger.getLogger(XtheoryActivator.class);
 	

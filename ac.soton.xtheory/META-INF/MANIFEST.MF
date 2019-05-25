@@ -27,6 +27,7 @@ Require-Bundle: org.eclipse.xtext;bundle-version="[2.12.0,3.0.0)",
  org.eclipse.xtend.lib;bundle-version="2.13.0",
  org.eclipse.emf.workspace;bundle-version="1.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+<<<<<<< HEAD
 Export-Package: ac.soton.xtheory.validation,
  ac.soton.xtheory,
  ac.soton.xtheory.serializer,
@@ -35,4 +36,13 @@ Export-Package: ac.soton.xtheory.validation,
  ac.soton.xtheory.generator,
  ac.soton.xtheory.services,
  ac.soton.xtheory.parser.antlr
+=======
+Export-Package: ac.soton.xtheory,
+ ac.soton.xtheory.generator,
+ ac.soton.xtheory.parser.antlr,
+ ac.soton.xtheory.parser.antlr.internal,
+ ac.soton.xtheory.scoping,
+ ac.soton.xtheory.services,
+ ac.soton.xtheory.validation
+>>>>>>> 963616839c6bebea4628b287134ece27bf40cfa7
 Import-Package: org.apache.log4j
