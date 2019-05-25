@@ -99,6 +99,7 @@ public class TheoryextensionSwitch<T> {
 				Theory theory = (Theory)theEObject;
 				T result = caseTheory(theory);
 				if (result == null) result = caseEventBNamed(theory);
+				if (result == null) result = caseEventBObject(theory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -200,15 +201,21 @@ public class TheoryextensionSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TheoryextensionPackage.RULE_BLOCK: {
+				RuleBlock ruleBlock = (RuleBlock)theEObject;
+				T result = caseRuleBlock(ruleBlock);
+				if (result == null) result = caseEventBNamedCommentedElement(ruleBlock);
+				if (result == null) result = caseEventBCommentedElement(ruleBlock);
+				if (result == null) result = caseEventBNamed(ruleBlock);
+				if (result == null) result = caseEventBElement(ruleBlock);
+				if (result == null) result = caseEventBCommented(ruleBlock);
+				if (result == null) result = caseEventBObject(ruleBlock);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TheoryextensionPackage.RULE: {
 				Rule rule = (Rule)theEObject;
 				T result = caseRule(rule);
-				if (result == null) result = caseEventBNamedCommentedElement(rule);
-				if (result == null) result = caseEventBCommentedElement(rule);
-				if (result == null) result = caseEventBNamed(rule);
-				if (result == null) result = caseEventBElement(rule);
-				if (result == null) result = caseEventBCommented(rule);
-				if (result == null) result = caseEventBObject(rule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -421,6 +428,21 @@ public class TheoryextensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseTheorem(Theorem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rule Block</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rule Block</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuleBlock(RuleBlock object) {
 		return null;
 	}
 

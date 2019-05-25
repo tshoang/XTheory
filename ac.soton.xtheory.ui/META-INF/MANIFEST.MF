@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.compare,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.xtext.ui.shared,
- org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="[2.13.0,2.14.0)",
  ac.soton.xtheory.ide;bundle-version="1.0.0",
  ac.soton.xtheory;bundle-version="1.0.0"
 Import-Package: org.apache.log4j

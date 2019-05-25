@@ -39,7 +39,7 @@ public interface Type extends EventBNamedCommentedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constructors</em>' containment reference list.
 	 * @see theoryextension.TheoryextensionPackage#getType_Constructors()
-	 * @model containment="true" resolveProxies="true"
+	 * @model containment="true" resolveProxies="true" required="true"
 	 * @generated
 	 */
 	EList<Constructor> getConstructors();

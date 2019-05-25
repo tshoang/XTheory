@@ -13,18 +13,18 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.eventb.emf.core.provider.EventBNamedCommentedElementItemProvider;
-
 import theoryextension.Rule;
 import theoryextension.TheoryextensionFactory;
 import theoryextension.TheoryextensionPackage;
@@ -36,7 +36,7 @@ import theoryextension.TheoryextensionPackage;
  * @generated
  */
 public class RuleItemProvider
-	extends EventBNamedCommentedElementItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -118,10 +118,7 @@ public class RuleItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Rule)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Rule_type") :
-			getString("_UI_Rule_type") + " " + label;
+		return getString("_UI_Rule_type");
 	}
 
 	/**
@@ -164,6 +161,17 @@ public class RuleItemProvider
 				(createChildParameter
 					(TheoryextensionPackage.Literals.RULE__IRULE,
 				 	TheoryextensionFactory.eINSTANCE.createInferenceRule()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

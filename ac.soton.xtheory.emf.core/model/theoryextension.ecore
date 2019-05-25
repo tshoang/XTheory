@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="theoryextension" nsURI="http://soton.ac.uk/models/eventb/theoryextension/2018"
     nsPrefix="theoryextension">
-  <eClassifiers xsi:type="ecore:EClass" name="Theory" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed">
+  <eClassifiers xsi:type="ecore:EClass" name="Theory" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" upperBound="-1"
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -19,6 +19,9 @@
         eType="#//Rule" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
         eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalElements" upperBound="-1"
+        eType="ecore:EClass ../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamed"/>
   <eClassifiers xsi:type="ecore:EClass" name="Operator" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
@@ -50,8 +53,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" upperBound="-1"
-        eType="#//Constructor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" lowerBound="1"
+        upperBound="-1" eType="#//Constructor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter"/>
   </eClassifiers>
@@ -70,7 +73,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicate" lowerBound="1"
         eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="RuleBlock" eSuperTypes="../../org.eventb.emf.core/model/eventbcore.ecore#//EventBNamedCommentedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" lowerBound="1" eType="#//Rule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rrule" eType="#//RewriteRule"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="irule" eType="#//InferenceRule"

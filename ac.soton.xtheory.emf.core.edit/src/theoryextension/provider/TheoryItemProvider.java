@@ -13,6 +13,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,9 +23,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eventb.emf.core.CoreFactory;
+import org.eventb.emf.core.CorePackage;
+import org.eventb.emf.core.context.ContextFactory;
+import org.eventb.emf.core.machine.MachineFactory;
 import org.eventb.emf.core.provider.EventBNamedItemProvider;
 
 import theoryextension.Theory;
+import theoryextension.TheoryextensionFactory;
 import theoryextension.TheoryextensionPackage;
 
 /**
@@ -251,6 +258,37 @@ public class TheoryItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.EVENT_BOBJECT__ANNOTATIONS);
+			childrenFeatures.add(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns Theory.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -285,6 +323,13 @@ public class TheoryItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Theory.class)) {
+			case TheoryextensionPackage.THEORY__ANNOTATIONS:
+			case TheoryextensionPackage.THEORY__INTERNAL_ELEMENTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -298,6 +343,131 @@ public class TheoryItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(CorePackage.Literals.EVENT_BOBJECT__ANNOTATIONS,
+				 	CoreFactory.eINSTANCE.createAnnotation()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createTheory()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createParameter()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createOperator()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createArgument()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createType()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createConstructor()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createDestructor()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createAxiom()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createTheorem()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createRuleBlock()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	TheoryextensionFactory.eINSTANCE.createVariable()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	CoreFactory.eINSTANCE.createProject()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createMachine()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createVariable()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createInvariant()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createEvent()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createParameter()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createGuard()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createWitness()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	MachineFactory.eINSTANCE.createAction()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	ContextFactory.eINSTANCE.createContext()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	ContextFactory.eINSTANCE.createConstant()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	ContextFactory.eINSTANCE.createCarrierSet()));
+		
+			newChildDescriptors.add
+				(createChildParameter
+					(TheoryextensionPackage.Literals.THEORY__INTERNAL_ELEMENTS,
+				 	ContextFactory.eINSTANCE.createAxiom()));
 	}
 
 }
